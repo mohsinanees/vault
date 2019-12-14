@@ -1,7 +1,7 @@
 const SQL = require('./sql')
 const USER = require("os").userInfo().username
 const fs = require('fs')
-const privateKeyHex = fs.readFileSync(`/home/${USER}/.sawtooth/keys/${USER}.priv`, 'utf8')
+const privateKeyHex = fs.readFileSync(`/home/dawood.ud/.sawtooth/keys/$dawood.ud.priv`, 'utf8')
 const VaultClient = require("./VaultClient")
 const csv = require('csv-parser')
 
