@@ -1,0 +1,49 @@
+******************************************************************************************
+**
+** Perfect Logger Logging System
+** Application Version          : 1.0
+** Perfect-Logger Version       : 1.5.2
+** Application Start Time (UTC) : 19:12:17 2019/12/14
+**
+** Copyright 2018 Team whileLOOP
+**
+******************************************************************************************
+**
+** Log Number               : #2
+** Continuing from Log File : client.1576350737951.log
+** Log Start Time (UTC)     : 19:12:17 2019/12/14
+**
+******************************************************************************************
+2019/12/14 | 19:12:24 | INFO | 3000
+2019/12/14 | 19:12:24 | INFO | {\n  "link": "http://127.0.0.1:8008/batch_statuses?id=2994c986258665933b7d44fc4b0ce75d0e55eb3fa9034b6ed66a0bc59c5a952c3ddd3a38ddc1598b2e6b0b9d43ec3035f03a4a49cd925db7a5863a8cc4eb8651"
+}
+2019/12/14 | 19:12:29 | INFO | 3100
+2019/12/14 | 19:12:29 | INFO | {\n  "link": "http://127.0.0.1:8008/batch_statuses?id=326edd728a6d4aadb04a70d4ba822805738a249e3993ab1c1574ed99adf9cdb2260e4f45e9ad8d210150c5e2fcbae2efbcdfa186e1089ad90178a41f20b7b86b"
+}
+2019/12/14 | 19:12:34 | INFO | 3200
+2019/12/14 | 19:12:34 | INFO | {\n  "link": "http://127.0.0.1:8008/batch_statuses?id=b7d69fe9e70faa030d1e2a5cec36181da50493ecbe7d1c276a3880cee753a4b72271bcf70e5f7bb960d88386f28743e515edefd502c8d67163bbef93e18a1fc8"
+}
+2019/12/14 | 19:12:39 | INFO | 3300
+2019/12/14 | 19:12:39 | INFO | {\n  "link": "http://127.0.0.1:8008/batch_statuses?id=ade69387f2391ef2de5676ba1d2589c0f34b4018563a47fe447f38f0107af62068807148a5051111c4f1f42ff48bb2ccc9841b66322dce4c3518ef64bc60e69b"
+}
+2019/12/14 | 19:12:44 | INFO | 3400
+2019/12/14 | 19:12:44 | INFO | {\n  "link": "http://127.0.0.1:8008/batch_statuses?id=551f4751097976fcda8d94ce052382ab983d06759e6bb95d5f3a14542a8ce6107f5adccbb0efa40e5674449967d05d9f1f6cf64f7c14906a099d3601abf24a66"
+}
+2019/12/14 | 19:12:49 | INFO | 3500
+2019/12/14 | 19:12:49 | INFO | {\n  "link": "http://127.0.0.1:8008/batch_statuses?id=aafb3ebfc39dfdbd8295dce8e75f330126c0cd2a1b1ea63a26b6eb72d6a4194a7a4c37346b80bcc6857f80198047c3083ef5d1957045e0102064c60093a2190d"
+}
+2019/12/14 | 19:12:54 | INFO | 3600
+2019/12/14 | 19:12:55 | INFO | {\n  "link": "http://127.0.0.1:8008/batch_statuses?id=2726366f036ecc213fa6e1100dbfacac38016ae68c49a65b565cf2102c51f80a739cb37e4e49872c3da818ed3650ff555f5c854b2e199b492ae201f208f54153"
+}
+2019/12/14 | 19:13:00 | INFO | 3700
+2019/12/14 | 19:13:00 | INFO | {\n  "link": "http://127.0.0.1:8008/batch_statuses?id=caa1d4f197604432e0d2d524466abea38230255ea88f120c02df6d586d16a05c5386ac81918e47dcffd71c853c10b835b4cd0fd28bc9c89f0b33e4ab2924b01a"
+}
+2019/12/14 | 19:13:05 | INFO | 3800
+2019/12/14 | 19:13:05 | INFO | {\n  "link": "http://127.0.0.1:8008/batch_statuses?id=632ebbf37ceb981306449c4989c8b99f48ae987f1ad8a9d93c67ea2a13cb1a230dabc6c2feb4bb21adc8e586994bc04707749b16035c09d6774fc76a5884dc20"
+}
+2019/12/14 | 19:13:10 | INFO | 3900
+2019/12/14 | 19:13:10 | INFO | {\n  "link": "http://127.0.0.1:8008/batch_statuses?id=e58e5e3d4d8f04393e1f87e8fa78790ff81cf37facdb36feeebe7e3041abd7f2120c925a4aeee00f6db5edf565c2f19f32639ea29eed00e570b7bf074ee76ee6"
+}
+2019/12/14 | 19:13:15 | INFO | 4000
+2019/12/14 | 19:13:15 | INFO | {\n  "link": "http://127.0.0.1:8008/batch_statuses?id=dc25b727223cd2e109b59ca80b1a0960127fa44f3aed6672d932fdb8b015669b4acf6ff565a3bc87342c769280c1cfb3eb451d11b180166760eef0177a2d577d"
+}

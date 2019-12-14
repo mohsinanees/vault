@@ -1,0 +1,193 @@
+******************************************************************************************
+**
+** Perfect Logger Logging System
+** Application Version          : 1.0
+** Perfect-Logger Version       : 1.5.2
+** Application Start Time (UTC) : 18:40:00 2019/12/14
+**
+** Copyright 2018 Team whileLOOP
+**
+******************************************************************************************
+**
+** Log Number               : #81
+** Continuing from Log File : vault_processor.1576348999738.log
+** Log Start Time (UTC)     : 18:43:19 2019/12/14
+**
+******************************************************************************************
+2019/12/14 | 18:43:19 | INFO | [32m[2019-12-14 18:43:19 DEBUG	vault_processor][39m\nCustID: 274380001081591
+Name: N/A
+TradeChannel: HFS Small T.G.
+hash: 5a1f7c86262c2ab5179d86d23bbf9bc8921da0881ce862991e3a73e7f5468b48
+2019/12/14 | 18:43:19 | INFO | [32m[2019-12-14 18:43:19 DEBUG	vault_processor][39m\nCustID: 274380001082827
+Name: N/A
+TradeChannel: HFS Small T.G.
+hash: 43e6196b1c38358524a3eb0dae219f380b4ec741869732dd41adbd8857efe4a4
+2019/12/14 | 18:43:19 | INFO | [32m[2019-12-14 18:43:19 DEBUG	vault_processor][39m\nCustID: 274380001085180
+Name: N/A
+TradeChannel: HFS Small T.G.
+hash: a895ccf7757d200fa032ca4cd4242524ec081eab9b9578b1251097ab70c27541
+2019/12/14 | 18:43:19 | INFO | [32m[2019-12-14 18:43:19 DEBUG	vault_processor][39m\nCustID: 274380001086399
+Name: N/A
+TradeChannel: HFS Small T.G.
+hash: 2c60c6e98a2f5d2e54f17b45ca64d2643f7cfa34e234b62187e54202fdddd3bb
+2019/12/14 | 18:43:19 | INFO | [32m[2019-12-14 18:43:19 DEBUG	vault_processor][39m\nCustID: 274380001087006
+Name: N/A
+TradeChannel: HFS Small T.G.
+hash: 410768bf600523732cae83eac473187de89262be3a5c2c8292140a7771bff570
+2019/12/14 | 18:43:19 | INFO | [32m[2019-12-14 18:43:19 DEBUG	vault_processor][39m\nCustID: 274380001085185
+Name: N/A
+TradeChannel: HFS Small T.G.
+hash: 4c287b9d84a70c290eb5e3d499b34663d0f0734f0ddd3ff476edb8726691dbed
+2019/12/14 | 18:43:19 | INFO | [32m[2019-12-14 18:43:19 DEBUG	vault_processor][39m\nCustID: 274380001080444
+Name: N/A
+TradeChannel: HFS Small T.G.
+hash: 93938cec84b57f6273e6dffd834f6de23996e6f11e4311fad67c84d998826715
+2019/12/14 | 18:43:19 | INFO | [32m[2019-12-14 18:43:19 DEBUG	vault_processor][39m\nCustID: 274380001077263
+Name: Branch mstqbal al seha
+TradeChannel: RVO Pharma
+hash: 13851b5f688c46e256b3acf0b0940ee926f0765b0f10c7b440cc48ae302ba6fd
+2019/12/14 | 18:43:19 | INFO | [32m[2019-12-14 18:43:19 DEBUG	vault_processor][39m\nCustID: 274380001077779
+Name: Algmal  Pharmacy
+TradeChannel: RVO Pharma
+hash: d546470f80ae87daeb08e4a159894e0205a837dcc782708d35a0df482d072a15
+2019/12/14 | 18:43:19 | INFO | [32m[2019-12-14 18:43:19 DEBUG	vault_processor][39m\nCustID: 274380001080831
+Name: N/A
+TradeChannel: HFS Small T.G.
+hash: 9d97f2e88b96f3e984debf6701df45d3581b2a9761d987c543496239f4370a6c
+2019/12/14 | 18:43:19 | INFO | [32m[2019-12-14 18:43:19 DEBUG	vault_processor][39m\nCustID: 274380001095696
+Name: N/A
+TradeChannel: N/A
+hash: 9310a5b4cf289b813b33260559a11fde35a6bc369483390c2d6269444c734ffd
+2019/12/14 | 18:43:19 | INFO | [32m[2019-12-14 18:43:19 DEBUG	vault_processor][39m\nCustID: 274380001095711
+Name: N/A
+TradeChannel: N/A
+hash: 6a95faf67bfbf37c034bb5b338268c5335fe23f01ceb58e9aff13bcc86719618
+2019/12/14 | 18:43:19 | INFO | [32m[2019-12-14 18:43:19 DEBUG	vault_processor][39m\nCustID: 274380001095771
+Name: N/A
+TradeChannel: N/A
+hash: 43ff68d910a0fe2e6913246cea609659b1b2b7173d1342b3afdffa036bc589fa
+2019/12/14 | 18:43:19 | INFO | [32m[2019-12-14 18:43:19 DEBUG	vault_processor][39m\nCustID: 274380001095998
+Name: N/A
+TradeChannel: N/A
+hash: 5bfef1eb012e831f5e66819cc9ca7b29769dfe99d608ff02a64db4b83f021f4f
+2019/12/14 | 18:43:19 | INFO | [32m[2019-12-14 18:43:19 DEBUG	vault_processor][39m\nCustID: 274380001095997
+Name: N/A
+TradeChannel: N/A
+hash: 4c360c49396fe0ad5f19454b19726fdd1a2260ca59690b5947442f38bf64fdf8
+2019/12/14 | 18:43:19 | INFO | [32m[2019-12-14 18:43:19 DEBUG	vault_processor][39m\nCustID: 274380001096019
+Name: N/A
+TradeChannel: N/A
+hash: 65576e2ba6ca43ced4a363d3954e6637a06bc3a663c00e8fd1b26e24661135f9
+2019/12/14 | 18:43:19 | INFO | [32m[2019-12-14 18:43:19 DEBUG	vault_processor][39m\nCustID: 274380001096277
+Name: N/A
+TradeChannel: N/A
+hash: 8c2640fabf1590d6c9160fc01866a547f80b1c7e3a88abac21f6826f5b6dfcd8
+2019/12/14 | 18:43:19 | INFO | [32m[2019-12-14 18:43:19 DEBUG	vault_processor][39m\nCustID: 274380001096045
+Name: N/A
+TradeChannel: N/A
+hash: 2e39d8b8bcfaf329089a4aebe7de7220ab508674f737fe2f81bb21ad2c96f51c
+2019/12/14 | 18:43:19 | INFO | [32m[2019-12-14 18:43:19 DEBUG	vault_processor][39m\nCustID: 274380001096438
+Name: N/A
+TradeChannel: N/A
+hash: 3e75b16673f0dd75aa861961becbdb059df5cd20223cd3c051cd9486dcef17df
+2019/12/14 | 18:43:19 | INFO | [32m[2019-12-14 18:43:19 DEBUG	vault_processor][39m\nCustID: 274380001096068
+Name: N/A
+TradeChannel: N/A
+hash: 4a7b8e00be35a1b94d2b3bc2b2029b63ca9b0f37afe8f872d0779be85a6a9935
+2019/12/14 | 18:43:19 | INFO | [32m[2019-12-14 18:43:19 DEBUG	vault_processor][39m\nCustID: 274380001096455
+Name: N/A
+TradeChannel: N/A
+hash: 9165607455d7704b20f4c3970dd439af817effd9ead29b7d1e985d80f8281802
+2019/12/14 | 18:43:19 | INFO | [32m[2019-12-14 18:43:19 DEBUG	vault_processor][39m\nCustID: 274380001096511
+Name: N/A
+TradeChannel: N/A
+hash: 46292728280ff40047dc7ce8095cd1f722d09defbcd0af59ea05777862f8038c
+2019/12/14 | 18:43:20 | INFO | [32m[2019-12-14 18:43:20 DEBUG	vault_processor][39m\nCustID: 274380001096553
+Name: N/A
+TradeChannel: N/A
+hash: b1f960240c54266933d382574db129e66542392d9700d327b4fb99ce8cf50665
+2019/12/14 | 18:43:20 | INFO | [32m[2019-12-14 18:43:20 DEBUG	vault_processor][39m\nCustID: 274380001096599
+Name: N/A
+TradeChannel: N/A
+hash: 227e05ac4bf8529212d61d908b4efee64b00c8d3be24dd7ea8351b0d38b169fb
+2019/12/14 | 18:43:20 | INFO | [32m[2019-12-14 18:43:20 DEBUG	vault_processor][39m\nCustID: 274380001096610
+Name: N/A
+TradeChannel: N/A
+hash: c7f352a3f0bd40b5e257175746296236ada95da3552a8f24de2f2cb260866451
+2019/12/14 | 18:43:20 | INFO | [32m[2019-12-14 18:43:20 DEBUG	vault_processor][39m\nCustID: 274380001096629
+Name: N/A
+TradeChannel: N/A
+hash: e8cf037b0e2345bdfc633281d7e40b73e2120b63f41d26f2a91270f9d5df68a1
+2019/12/14 | 18:43:20 | INFO | [32m[2019-12-14 18:43:20 DEBUG	vault_processor][39m\nCustID: 274380001096689
+Name: N/A
+TradeChannel: N/A
+hash: 91caf65726ceae322e773305c6b3738ff5dc85acd795aef5eaa00d39a2b441ac
+2019/12/14 | 18:43:20 | INFO | [32m[2019-12-14 18:43:20 DEBUG	vault_processor][39m\nCustID: 274380001096859
+Name: N/A
+TradeChannel: N/A
+hash: c3224819a57c761ba85eeb1bc508486548530b756623da7cf767e360e646884f
+2019/12/14 | 18:43:20 | INFO | [32m[2019-12-14 18:43:20 DEBUG	vault_processor][39m\nCustID: 274380001096880
+Name: N/A
+TradeChannel: N/A
+hash: cde0157f8403bae9e8c5e5c5aceb84149c44abb90ad2462707c48faeeb56806a
+2019/12/14 | 18:43:20 | INFO | [32m[2019-12-14 18:43:20 DEBUG	vault_processor][39m\nCustID: 274380001097083
+Name: N/A
+TradeChannel: N/A
+hash: e10c83a274da52d31e7e601b64e952afc2789c5f8cc3471dfd8b148f39ac90d4
+2019/12/14 | 18:43:20 | INFO | [32m[2019-12-14 18:43:20 DEBUG	vault_processor][39m\nCustID: 274380001097108
+Name: N/A
+TradeChannel: N/A
+hash: f2e36e99720ff901e471b43fb01ab317e4b2af27a644e13ba6d6e013018b2eb1
+2019/12/14 | 18:43:20 | INFO | [32m[2019-12-14 18:43:20 DEBUG	vault_processor][39m\nCustID: 274380001097194
+Name: N/A
+TradeChannel: N/A
+hash: af89d40b72265b1d02392f8e367bed2dae5ae78c1f65b79d28fd72177a86c433
+2019/12/14 | 18:43:20 | INFO | [32m[2019-12-14 18:43:20 DEBUG	vault_processor][39m\nCustID: 274380001080681
+Name: N/A
+TradeChannel: HFS Small T.G.
+hash: e1eff4a5c7a776f27d8df1c5bbab424d6ac8539041567f2240d0f8026577f5ba
+2019/12/14 | 18:43:20 | INFO | [32m[2019-12-14 18:43:20 DEBUG	vault_processor][39m\nCustID: 274380001080923
+Name: N/A
+TradeChannel: HFS Small T.G.
+hash: d000d377234c989cab2e392c4df2521bb6cb50089a90f231708ca0eed28fa77e
+2019/12/14 | 18:43:20 | INFO | [32m[2019-12-14 18:43:20 DEBUG	vault_processor][39m\nCustID: 274380001081172
+Name: N/A
+TradeChannel: HFS Small T.G.
+hash: b750685b7991785a7f3f8d4e223251c6f4e909118b1687ed0a1031112cc5c687
+2019/12/14 | 18:43:20 | INFO | [32m[2019-12-14 18:43:20 DEBUG	vault_processor][39m\nCustID: 274380001080978
+Name: N/A
+TradeChannel: HFS Small T.G.
+hash: 7a93d37653bd0e8be0ad615c0f837a69e332df717944ac35e8cfbecdcecba84b
+2019/12/14 | 18:43:20 | INFO | [32m[2019-12-14 18:43:20 DEBUG	vault_processor][39m\nCustID: 274380001088922
+Name: N/A
+TradeChannel: HFS Small T.G.
+hash: b242e7dd8c3a0f5f94f740d98e48e782be090d6c6921d7a4abb48048422f9159
+2019/12/14 | 18:43:20 | INFO | [32m[2019-12-14 18:43:20 DEBUG	vault_processor][39m\nCustID: 274380001090208
+Name: N/A
+TradeChannel: HFS Small T.G.
+hash: 13d40fd8fd3338878bd0e6be5168306375c3e4ba467c55d43212159041382af6
+2019/12/14 | 18:43:20 | INFO | [32m[2019-12-14 18:43:20 DEBUG	vault_processor][39m\nCustID: 274380001090584
+Name: N/A
+TradeChannel: HFS Small T.G.
+hash: 0fcde6909c26e47bb7ab02c231d31fb324177c0d9e8e67bb09beb56d31924315
+2019/12/14 | 18:43:20 | INFO | [32m[2019-12-14 18:43:20 DEBUG	vault_processor][39m\nCustID: 274380001077509
+Name: AL hokama
+TradeChannel: RVO Pharma
+hash: 5ce3d19b422f16a8f106a774cd0f89aa8e8b363036645231b077f37e1d89ffc6
+2019/12/14 | 18:43:20 | INFO | [32m[2019-12-14 18:43:20 DEBUG	vault_processor][39m\nCustID: 274380001097200
+Name: N/A
+TradeChannel: N/A
+hash: 3936aac653c7841044480d09d75d984cd020164d47d05d2e0bae1f711e2fd95a
+2019/12/14 | 18:43:20 | INFO | [32m[2019-12-14 18:43:20 DEBUG	vault_processor][39m\nCustID: 274380001097210
+Name: N/A
+TradeChannel: N/A
+hash: b3ffc96249623672501d818ec466b4c275d4409cf819b9ef31f1a171ce41f94d
+2019/12/14 | 18:43:20 | INFO | [32m[2019-12-14 18:43:20 DEBUG	vault_processor][39m\nCustID: 274380001097213
+Name: N/A
+TradeChannel: N/A
+hash: fc1344cc4a5393dc032d8ef773504e0bfc97ac4b94713f2124690f15b91e1ee8
+2019/12/14 | 18:43:20 | INFO | [32m[2019-12-14 18:43:20 DEBUG	vault_processor][39m\nCustID: 274380001097351
+Name: N/A
+TradeChannel: N/A
+hash: ae2464c3224a76247dfd397a9b7f5a62c3daeb72519d453ff440a353ab76692e
+Continuing to vault_processor.1576349000169.log

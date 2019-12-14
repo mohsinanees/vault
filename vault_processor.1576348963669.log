@@ -1,0 +1,241 @@
+******************************************************************************************
+**
+** Perfect Logger Logging System
+** Application Version          : 1.0
+** Perfect-Logger Version       : 1.5.2
+** Application Start Time (UTC) : 18:40:00 2019/12/14
+**
+** Copyright 2018 Team whileLOOP
+**
+******************************************************************************************
+**
+** Log Number               : #34
+** Continuing from Log File : vault_processor.1576348963669.log
+** Log Start Time (UTC)     : 18:42:43 2019/12/14
+**
+******************************************************************************************
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001067144
+Name: BAQALT Badreyah Abdullah Suliman EL Fere
+TradeChannel: HFS Small T.G.
+hash: b8ebae03bf21f0578da808536bf44c5733e6fc2a11fa71717abb4d0acf6a9840
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001067418
+Name: Tamoinat Nora
+TradeChannel: HFS Small T.G.
+hash: 990a35c095b6713056a34f0bf9cfeab1d59cf72828625a83e100b8c4d3b0a30e
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001067492
+Name: Sayari 7
+TradeChannel: HFS Small T.G.
+hash: 5314a458d1cb6f2cfa5308c463c3b088e227affdfdf50bc324746741ad67dd81
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001067498
+Name: Hegelan 2
+TradeChannel: HFS Small T.G.
+hash: a410dfde1217bca9b19ce076fdfe397e02870703acaf740e8ac950de4d56ed16
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001067500
+Name: ALBRAK
+TradeChannel: HFS Small T.G.
+hash: 46c6ce8b0a4e8bed7c375a2b06e86b0af40bc8ac6a670bbcb4010474d2aeb32f
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001067510
+Name: Al-Mutairi
+TradeChannel: HFS Small T.G.
+hash: 218e1e81932d97c592ee0b86341d48ac17995e9b0fca68fc20cefe0b2121609a
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001067533
+Name: ayadi
+TradeChannel: HFS Small T.G.
+hash: 4a648045160f5ac9e618a0a7d2f00176500cff9afd964ffd046a278fb56c0e9a
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001067698
+Name: THANI ALHARBY SUPPLIES
+TradeChannel: HFS Small T.G.
+hash: 394e1ad2b0f20d5b70a6a23921e0b4cb25a85ee2074d1f98682d97d0e010b9fb
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001067829
+Name: kaled mohamed al sekami
+TradeChannel: HFS Small T.G.
+hash: 01d4f298e24b8b42e50b568e08bbebd53c8d141c698aa1fe76855cc06c2b1a0f
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001067957
+Name: SULYMAN MUHAMMED HBTAR-LYALE ABHA
+TradeChannel: HFS Small T.G.
+hash: 7b8ecb3e9a4963bf43780dd56d45c896ed92486163b8b50e9f623a2a57dbe402
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001068528
+Name: rakan bin Sufan
+TradeChannel: HFS Small T.G.
+hash: a5eb3406a2b419a2ad20800915ff0262a6a9903d484a677d3188366185025c01
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001068560
+Name: SARA
+TradeChannel: HFS Small T.G.
+hash: 6dd2474ddbd9f4fd205d5a59b58a30a196a88f0c6fbccdf680b3ae8def2060d3
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001068565
+Name: ALI UON ALSIARY
+TradeChannel: HFS Small T.G.
+hash: 1bcaffe54fc05a57211a88a953395105209f504c41a826f90d74b9b3e7a3964a
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001051336
+Name: ALMADINAH
+TradeChannel: HFS Small T.G.
+hash: 420bbef60adbc5ad250dc10b14cb4b31d677095313ba673106e39ef0a78d0819
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001061955
+Name: ALWATANIAH
+TradeChannel: HFS Small T.G.
+hash: 4d85a59427d247ba8a18fdffd6950bc8772cc2879098d2904a3091e8aa0c9ab2
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001062107
+Name: ALZABIN
+TradeChannel: HFS Small T.G.
+hash: 36549bd7331a97eab73234c6feedb4640323aaf22471469a5b892320907d3457
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001062196
+Name: ALAKHAWAIN
+TradeChannel: HFS Small T.G.
+hash: 7ea34e407dd0f8cb7284cd9b59d93335f271c9f9725fdf796187ea6e448980bb
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001062446
+Name: ALAMERI
+TradeChannel: HFS Small T.G.
+hash: 2e9575dba1879c16d071c90a253316209f0950142a470741127b6e44f911b2b2
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001062473
+Name: ALSHEHRI
+TradeChannel: HFS Small T.G.
+hash: 09e9b708c282b91d02d2fe78a72f71175d60f35c797f6e35dedc58c97df398ae
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001062528
+Name: MARAMI
+TradeChannel: HFS Small T.G.
+hash: 3c4ca3f1b1d615caab65000e3aeab70c991b464c6aaac9a2ac70dfae0c6a4c7e
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001062792
+Name: MOHAMMAD SALIH
+TradeChannel: HFS Small T.G.
+hash: fff9297ed9a794ad5c5c4678357d41f01eccf38ecb8f4efc346a910d0a4371b7
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001063802
+Name: JAWHRAT ALKHALEEJ2
+TradeChannel: HFS Small T.G.
+hash: a4f2ace4638e1c97243ceac297fd233093c6aac04d375a14f374755a7f8c6b68
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001063821
+Name: RAWABI TOHAMA 2
+TradeChannel: HFS Small T.G.
+hash: 19f6530130de20051ec42478e0842b413704015672c5a5f507df6d780788f08b
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001067086
+Name: BAQALT LAIN
+TradeChannel: HFS Small T.G.
+hash: f367db339e5c0f666df0c48227675a575ef5f6e9d12a9aff8d967d2402f698cb
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001067093
+Name: EBRAHEM GROCERY
+TradeChannel: HFS Small T.G.
+hash: 1d825c52dbb48feff4a4b16abca1dcc1a0747ca672fe6411e15034eae55f9cc1
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001068594
+Name: ABDALRHMAN ALKLEL
+TradeChannel: HFS Small T.G.
+hash: ca531106addd868c479cf358722052ceba5dc922371feff54aa89160711cf326
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001068626
+Name: ALTWEEL
+TradeChannel: HFS Small T.G.
+hash: a318849be6615506cf1ec8935c3aff0e0d6a31c91035b402d1cd28008ab29c69
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001068641
+Name: ABDALLAH ALGUHE
+TradeChannel: HFS Small T.G.
+hash: bad734f7d8d7176192e345862f4db980d5cbe26e956b4414d71e086a431cc61f
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001069199
+Name: Al Madaen
+TradeChannel: HFS Small T.G.
+hash: 101aab255efdc4f626eb3e3beccbe2e839ca163d6fd9dc7b6563a5c89161c0d7
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001069419
+Name: Manara
+TradeChannel: HFS Small T.G.
+hash: f45136e8ec4af5226bffc9d8b67e7f8eac4ffcd378d29b56cb87fc79f7c04cea
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001070936
+Name: Tamoinat Bin Shiban
+TradeChannel: HFS Small T.G.
+hash: c15541c44269a96ed12ea5c541e6fd3acadd717440d56382e13ae2b78c33c0fb
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001071098
+Name: Almotamyizah Co.
+TradeChannel: Discounters T.G
+hash: 495378ce83fb5e9064247905ce6b26d2c36c63dc6fbb9d9832c81224d3fa99e4
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001071130
+Name: Hamdi Lelblastic
+TradeChannel: Discounters T.G
+hash: 0ef05e32c33a3aa60653177d5321769f0307fa37799c544ce8dbaa71dd241e20
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001071875
+Name: SUPERMARKET ALWATAN
+TradeChannel: HFS Small T.G.
+hash: 6b6a533e463fc134b8c649abc97dcf17977f92d410d658235807c4f588a6e234
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001072188
+Name: al esnad for food est.
+TradeChannel: HFS Small T.G.
+hash: 6aff704615a2c986f5884d2812c76f344313c6956742546e4c11d3dc6dfcd935
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001072545
+Name: Bawabit albait tred . est
+TradeChannel: HFS Small T.G.
+hash: f688252a134f828149427418e7a78a5228e035373574368ae0910bf7d211095a
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001073776
+Name: kaemah w dokanTamoinat co
+TradeChannel: Self Service T.G
+hash: bc598cab2080a275ef8d32223b2a21525a467390f10503eabbde500220c3e453
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001073803
+Name: fatima Saliuman ali
+TradeChannel: HFS Small T.G.
+hash: 54a3917c0801fa760dd0949d94128d202d807e9c7f4f34e294796f441b2055da
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001073891
+Name: haag sebat al nahdy
+TradeChannel: HFS Small T.G.
+hash: 616e3a1469ba82962bd766d9ea2b2a70af1b393e78681d7933341f1fc32ce05c
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001074013
+Name: maryam Aloteby
+TradeChannel: HFS Small T.G.
+hash: f1b6ae11fec4c595c667b74304507fdca95ac6a9f1c673cc496e278e39419519
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001067125
+Name: MARKEZ Zaid Abbas Alotaibi TRD.
+TradeChannel: HFS Small T.G.
+hash: cd75a08473c01ec4b38bfee23314bb86ae401ea21a1e4e9a8fde6a2d7ae2cf17
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001067245
+Name: Al Khareef Pharmacy
+TradeChannel: RVO Pharma
+hash: ef0939016019497365e48354ac8e4475c292605cdbbef141054a7f7e638686b8
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001067366
+Name: tmweenat shogaa alharby
+TradeChannel: HFS Small T.G.
+hash: a921d7f8904cbe60044a6f43b7091f96f3d99282e4369b0dc71d49e9fc85a008
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001067370
+Name: Food markets
+TradeChannel: HFS Small T.G.
+hash: 74548fdf34aeeaf7f8aca2e5da37cef39d15e18a39d1e9cd5db1f23e6883610b
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001067404
+Name: algabry2
+TradeChannel: HFS Small T.G.
+hash: 6e635445ac463f144c91bf6e21b0267db80e45707c37402d149f59ce1f8e132a
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001067477
+Name: HMEDAH
+TradeChannel: HFS Small T.G.
+hash: 6fec1cf81f9b027caaf23b1caac27916b6cf3e978302717a264f1ed1716c5d38
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001067487
+Name: Tuwaijri
+TradeChannel: HFS Small T.G.
+hash: 0a33f36d563d9a9500a0155d669c9b8cb028dad92da7cdc45660b0bb39e0597f
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001067924
+Name: zahret alareen grocery
+TradeChannel: HFS Small T.G.
+hash: d5efb435b46a631704c03ee0cda88bb82c7150859f48eec9d219c075e0d442db
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001053980
+Name: ABDALLH 3
+TradeChannel: HFS Small T.G.
+hash: 7288e6f004e018f3a93be643686bad8defae012e657f0f67e8d265a923ee2be9
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001049423
+Name: ABEER
+TradeChannel: HFS Small T.G.
+hash: 12e29fa9ee051385f531c104b293a31c57b66709c42ef0b89430b343160d772c
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001068477
+Name: Baz  alkamis
+TradeChannel: HFS Small T.G.
+hash: c4c6b30158d2126d7364fb8829329ecdcdda069c025ae607dd0472d92f4b4de8
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001047375
+Name: ALNOUR
+TradeChannel: HFS Small T.G.
+hash: 52d08ac1f66360f3816488cbb7471eadf983a155fd0937a5b5f53541c94bd3a4
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001054167
+Name: MOAID STORES
+TradeChannel: HFS Small T.G.
+hash: 21e4c107d00adc0b21c21abd2d873e0e7410fd495f7f7459df5bb19490289f35
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001075872
+Name: Basem Khayat Group - House Care
+TradeChannel: Wholesaler
+hash: 0ac68ad2b927e364c41fccd84d2061da6b2661003c1d7af4b5bf69726b295ab4
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001078263
+Name: Vitamin Pharmacy
+TradeChannel: RVO Pharma
+hash: 57f2202635c46dc8e6bf8c33d1bb32370a8d905487f39958b94b885790d62855
+2019/12/14 | 18:42:43 | INFO | [32m[2019-12-14 18:42:43 DEBUG	vault_processor][39m\nCustID: 274380001067540
+Name: alkanaas
+TradeChannel: HFS Small T.G.
+hash: 7ee69e5dc83755d717749bd38a7ead4171b914505e9e5a174216a3305c000381
+Continuing to vault_processor.1576348963996.log

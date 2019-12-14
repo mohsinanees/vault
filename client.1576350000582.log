@@ -1,0 +1,28 @@
+******************************************************************************************
+**
+** Perfect Logger Logging System
+** Application Version          : 1.0
+** Perfect-Logger Version       : 1.5.2
+** Application Start Time (UTC) : 19:00:00 2019/12/14
+**
+** Copyright 2018 Team whileLOOP
+**
+******************************************************************************************
+**
+** Log Number               : #2
+** Continuing from Log File : client.1576350000582.log
+** Log Start Time (UTC)     : 19:00:00 2019/12/14
+**
+******************************************************************************************
+2019/12/14 | 19:00:07 | INFO | 3000
+2019/12/14 | 19:00:07 | INFO | {\n  "link": "http://127.0.0.1:8008/batch_statuses?id=ba7066fd89d97e538ab31959387ece7d38b9b8f06940c68cf6ab52e0e83cc5581590fe914c894ca1ca1dc9ea4471bcc9b25a9141830395ca463d3d188c3cc64f"
+}
+2019/12/14 | 19:00:12 | INFO | 3100
+2019/12/14 | 19:00:12 | INFO | {\n  "link": "http://127.0.0.1:8008/batch_statuses?id=b88eb45701b70f78402ca7e6930a534050815dc2caefe2724aa12ca4d67d2e1559ebccaa59f030eb3f1a0654c749ffbcb10fe0f114106818de401fc485daf233"
+}
+2019/12/14 | 19:00:17 | INFO | 3200
+2019/12/14 | 19:00:17 | INFO | {\n  "link": "http://127.0.0.1:8008/batch_statuses?id=5a498600b55c0ad6c7a031ace307afa31c8acd33ac912b79e8027331ae6ef7b2270d302238a6f69ec92485a864c0b913281f6108d3f4132008e1a2e3a762d4c8"
+}
+2019/12/14 | 19:00:22 | INFO | 3300
+2019/12/14 | 19:00:22 | INFO | {\n  "link": "http://127.0.0.1:8008/batch_statuses?id=b9a5bc566dc833b4d1df8854ceaeb65edd35f0a012810c743e71adcd52a3bfd52c7ac8aef191bea4c3fa2a5cae5f6041da11983d39f41fc64cdda77b146d5def"
+}

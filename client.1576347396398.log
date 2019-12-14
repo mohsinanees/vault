@@ -1,0 +1,22 @@
+******************************************************************************************
+**
+** Perfect Logger Logging System
+** Application Version          : 1.0
+** Perfect-Logger Version       : 1.5.2
+** Application Start Time (UTC) : 18:16:36 2019/12/14
+**
+** Copyright 2018 Team whileLOOP
+**
+******************************************************************************************
+**
+** Log Number               : #2
+** Continuing from Log File : client.1576347396398.log
+** Log Start Time (UTC)     : 18:16:36 2019/12/14
+**
+******************************************************************************************
+2019/12/14 | 18:16:39 | INFO | \n0
+
+2019/12/14 | 18:16:39 | INFO | \n{
+  "link": "http://127.0.0.1:8008/batch_statuses?id=29b049ec50ce0edcfc2a32900e457f0a497f3f6708f3e45aa6daa28a96f3a3ff035dbb49467d61d0e5435cf511bec70176f16546b889aa9744e4e614bdbb0f5e"
+}
+
