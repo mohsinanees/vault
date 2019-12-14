@@ -18,7 +18,7 @@ class VaultPayload {
     }
 
     static fromBytes(payload) {
-        
+
         let res = cbor.decode(payload)
         if (res) {
 

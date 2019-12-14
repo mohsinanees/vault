@@ -16,14 +16,14 @@ var OFFSET
 app.get('/history/:id', async (req, res) => {
     let CustID = req.params.id
     let address = _genVaultAddress(CustID)
-    if(address) {
-        if(address == prevAddress) {
+    if (address) {
+        if (address == prevAddress) {
             console.log("in if")
             console.log(OFFSET)
             const data = await getHistory(address, OFFSET)
             OFFSET += 10
             res.status(200).send(data)
-        
+
         } else {
             console.log("in else")
             OFFSET = 0
@@ -32,9 +32,9 @@ app.get('/history/:id', async (req, res) => {
             prevAddress = address
             res.status(200).send(data)
         }
-                   
+
     }
-    
+
 });
 
 app.listen(PORT, () => {
@@ -49,14 +49,14 @@ const getHistory = async (stateAddress, offset) => {
 
     return await axios.get('http://127.0.0.1:8008/transactions',
         {
-          params: parameters
+            params: parameters
         }
     ).then(response => {
         const transactions = response.data;
         let res = []
         let payloadList = []
         let hash
-        
+
         transactions.data.filter(value => {
             if (value.header.inputs.includes(stateAddress)) {
                 payloadList.push(value.payload)
@@ -64,23 +64,23 @@ const getHistory = async (stateAddress, offset) => {
         })
 
         payloadList = payloadList.slice(offset, offset + 10)
-        
-        if(payloadList.length > 0) {
-            
+
+        if (payloadList.length > 0) {
+
             let data = Buffer.from(payloadList[0], 'base64')
             data = cbor.decode(data)
             hash = data.hash
         }
-        
+
         payloadList.forEach(element => {
-            
+
             let data = Buffer.from(element, 'base64')
             let status = true
             data = cbor.decode(data)
-    
-            if(hash != data.hash) {
-              hash = data.hash
-              status = false
+
+            if (hash != data.hash) {
+                hash = data.hash
+                status = false
             }
             data["status"] = status
             res.push(data)

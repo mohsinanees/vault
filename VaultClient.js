@@ -4,11 +4,11 @@ const { protobuf } = require('sawtooth-sdk')
 const cbor = require('cbor')
 const request = require('request')
 let logger = require('perfect-logger');
- 
+
 // Configure Settings
 logger.setLogDirectory("./");
 logger.setLogFileName("client");
- 
+
 // Initialize
 logger.initialize();
 
@@ -33,10 +33,10 @@ class VaultClient {
     let transactions = []
     records.forEach(async (record) => {
       const payload = new VaultPayload(
-        record.CustID,
-        record.CustName,
+        record.CUST_ID,
+        record.CustomerName,
         record.TradeChannel,
-        record.recordDate)
+        record.DUE_PERD)
 
       // let res = dbHandler.readAddress(payload.CustID);
       // // console.log("getting res data here ")
@@ -114,24 +114,24 @@ class VaultClient {
       logger.info("\n" + response.body + "\n");
     })
   }
-// async SubmitBatch(batchListBytes) {
-//     request.post({
-//       url: BATCH_URL,
-//       body: batchListBytes,
-//       headers: { 'Content-Type': 'application/octet-stream' }
-//     }, (err, response) => {
-//       if (err) return console.log(err)
-//       console.log(response.body)
-//       let res = JSON.parse(response.body)
-// //       if (res.hasOwnProperty('error')) {
-// //             //console.log(res.error.code + "\n\n")
-// //             if(res.error.code == 31) {
-// //               console.log(batchListBytes)
-// //               await this.SubmitBatch(batchListBytes)
-// //             }    
-// //           } 
-//     })
-//   }
+  // async SubmitBatch(batchListBytes) {
+  //     request.post({
+  //       url: BATCH_URL,
+  //       body: batchListBytes,
+  //       headers: { 'Content-Type': 'application/octet-stream' }
+  //     }, (err, response) => {
+  //       if (err) return console.log(err)
+  //       console.log(response.body)
+  //       let res = JSON.parse(response.body)
+  // //       if (res.hasOwnProperty('error')) {
+  // //             //console.log(res.error.code + "\n\n")
+  // //             if(res.error.code == 31) {
+  // //               console.log(batchListBytes)
+  // //               await this.SubmitBatch(batchListBytes)
+  // //             }    
+  // //           } 
+  //     })
+  //   }
 }
 
 module.exports = VaultClient

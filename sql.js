@@ -25,7 +25,7 @@ class SQL {
     async readRecords(limit, offset) {
         let model = models.Product
         let records = []
-        
+
         records = await model.findAll({
             limit: limit,
             offset: offset,
@@ -52,14 +52,14 @@ class SQL {
             }
             return result
         })
-        
+
         return records
     }
 
     async readRecord(CustID, date) {
         let model = models.Product
-        let record 
-        
+        let record
+
         record = await model.findAll({
             attributes: ["id"],
             where: {
@@ -79,7 +79,7 @@ class SQL {
             //console.log(res)
             if (res.length > 0) {
                 let customerId = res[0].Customer.id
-                let record = {customerId} 
+                let record = { customerId }
                 return record
             }
         })
@@ -89,8 +89,8 @@ class SQL {
 
     async readAnomalous(CustID, recordDate, TradeChannel) {
         let model = models.Anomalou
-        let Anomalous 
-        
+        let Anomalous
+
         Anomalous = await model.findAll({
             attributes: ["id"],
             where: {
@@ -98,15 +98,15 @@ class SQL {
                 new_tradechannel: TradeChannel,
                 due_perd: recordDate
             }
-            
+
         }).then(res => {
-            
-            if(res.length > 0){
+
+            if (res.length > 0) {
                 let id = res[0].id
-                return {id}
-            }     
+                return { id }
+            }
         })
-        
+
         return Anomalous
     }
 
@@ -130,12 +130,12 @@ class SQL {
 
     async readAddress(CustID) {
         let model = models.State_Address
-        let address 
+        let address
 
         address = await model.findAll({
             attributes: ["state_address"],
             include: [
-                
+
                 {
                     model: models.Customer,
                     attributes: [],
@@ -144,21 +144,21 @@ class SQL {
                     }
                 }
             ]
-            
+
         }).then(res => {
-           
-            if (res.length > 0) { 
+
+            if (res.length > 0) {
                 return res.state_address
-            }  
+            }
         })
-        
+
         return address
     }
 
     async insertAddress(customerId, stateAddress) {
         let model = models.State_Address
         let status
-        
+
         status = await model.create({
             customerId: customerId,
             state_address: stateAddress
