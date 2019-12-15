@@ -1,7 +1,7 @@
 const SQL = require('./sql')
 const USER = require("os").userInfo().username
 const fs = require('fs')
-const privateKeyHex = fs.readFileSync(`/home/dawood.ud/.sawtooth/keys/dawood.ud.priv`, 'utf8')
+const privateKeyHex = fs.readFileSync(`/home/dawood.ud/.sawtooth/keys/$dawood.ud.priv`, 'utf8')
 const VaultClient = require("./VaultClient")
 const csv = require('csv-parser')
 
@@ -44,20 +44,20 @@ async function execute(offset) {
 
 
 async function main() {
-  await fs.createReadStream('./test30.csv')
-  .pipe(csv())
-  .on('data', (data) => UFrecords.push(data))
-  .on('end', async () => {
-    // console.log(results.slice(0, 10))
-    console.log(UFrecords.length)
-    UFrecords.forEach(element => {
-      ParsedRecords.push(JSON.stringify(element))
+  fs.createReadStream('./test30.csv')
+    .pipe(csv())
+    .on('data', (data) => UFrecords.push(data))
+    .on('end', async () => {
+      // console.log(results.slice(0, 10))
+      console.log(UFrecords.length)
+      UFrecords.forEach(element => {
+        ParsedRecords.push(JSON.stringify(element))
+      })
+      Frecords = [...new Set(ParsedRecords)]
+      console.log(Frecords.length)
+      await loadRecords()
     })
-    Frecords = [...new Set(ParsedRecords)]
-    console.log(Frecords.length)
-  });
 
-  await loadRecords()
 }
 
 async function loadRecords() {
@@ -65,10 +65,10 @@ async function loadRecords() {
   console.log()
 
   for (var i = 0; i < Frecords.length; i = i + 100) {
-    await sleep(1500)
-    await execute(i, sql, client)
-    console.log("\n\n" + i + "\n\n")
-    logger.info("\n" + i + "\n");
+    await sleep(5000)
+    await execute(i)
+    console.log("\n" + i + "\n")
+    logger.info(i.toString());
   }
 }
 
