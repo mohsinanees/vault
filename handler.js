@@ -6,7 +6,7 @@ var colors = require('colors')
 const VaultPayload = require('./payload')
 const SQL = require('./sql')
 let flogger = require('perfect-logger');
-flogger.setLogDirectory("./");
+flogger.setLogDirectory("./logs");
 flogger.setLogFileName("vault_processor");
 
 flogger.initialize();
