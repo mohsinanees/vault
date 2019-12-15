@@ -9,7 +9,7 @@ const csv = require('csv-parser')
 let logger = require('perfect-logger');
 
 // Configure Settings
-logger.setLogDirectory("./");
+logger.setLogDirectory("./logs");
 logger.setLogFileName("client");
 
 // Initialize
@@ -32,7 +32,7 @@ const client = new VaultClient(privateKeyHex)
 
 async function execute(offset) {
 
-  const records = Frecords.slice(offset, offset + 101)//await sql.readRecords(100, offset)
+  const records = Frecords.slice(offset, offset + 100)//await sql.readRecords(100, offset)
   // let frecords = []
   // await records.forEach(element => {
   // frecords.push(JSON.stringify(element))
