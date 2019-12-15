@@ -14,19 +14,11 @@
     "cbor": "^3.0.0",
     "colors": "^1.4.0",
     "cors": "^2.8.5",
-<<<<<<< HEAD
-    "csv-parser": "^2.3.2",
-=======
->>>>>>> 58bf3e51d7e1bec9d59f59a35dfba3c4180a95f3
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "moment": "^2.24.0",
     "node-schedule": "^1.3.2",
     "nodemon": "^1.19.4",
-<<<<<<< HEAD
-    "perfect-logger": "^1.6.1",
-=======
->>>>>>> 58bf3e51d7e1bec9d59f59a35dfba3c4180a95f3
     "pg": "^7.12.1",
     "pg-hstore": "^2.3.3",
     "random-js": "^2.1.0",
