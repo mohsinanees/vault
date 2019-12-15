@@ -6,7 +6,7 @@ var colors = require('colors')
 const VaultPayload = require('./payload')
 const SQL = require('./sql')
 let flogger = require('perfect-logger');
-flogger.setLogDirectory("./");
+flogger.setLogDirectory("/home/dawood.ud/logs");
 flogger.setLogFileName("vault_processor");
 
 flogger.initialize();
@@ -40,7 +40,7 @@ const _applySet = (context, address, payload) => async (possibleAddressValues) =
 
     if (stateHash != payload.hash) {
 
-      const record = await sql.readRecord(payload.CustID, payload.recordDate)
+      const record = await sql.readRecord(payload.CustID, payload.recordDate, payload.TradeChannel)
       console.log("\n", record)
 
       if (record) {
@@ -122,11 +122,11 @@ const logger = (message, log) => {
       `Previous State hash: ${message.stateHash}`.yellow)
     flogger.warn(('[' + new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '') + ' ' +
       WARN + '\tvault_processor' + ']').yellow +
-      `Hash in the state does not match the hash in Transaction\n` +
-      `CustID: ${message.CustID}\n` +
-      `Name: ${message.CustName}\n` +
-      `TradeChannel: ${message.TradeChannel}\n` +
-      `hash: ${message.hash}\n`.yellow +
+      `Hash in the state does not match the hash in Transaction` +
+      `CustID: ${message.CustID}` +
+      `Name: ${message.CustName}` +
+      `TradeChannel: ${message.TradeChannel}` +
+      `hash: ${message.hash}`.yellow +
       `Previous State hash: ${message.stateHash}`.yellow);
   } else if (log == DEBUG) {
     console.log(('[' + new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '') + ' ' +
@@ -136,10 +136,10 @@ const logger = (message, log) => {
       `TradeChannel: ${message.TradeChannel}\n` +
       `hash: ${message.hash}`)
     flogger.info(('[' + new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '') + ' ' +
-      DEBUG + '\tvault_processor' + ']').green + '\n' +
-      `CustID: ${message.CustID}\n` +
-      `Name: ${message.CustName}\n` +
-      `TradeChannel: ${message.TradeChannel}\n` +
+      DEBUG + '\tvault_processor' + ']').green +
+      `CustID: ${message.CustID}` +
+      `Name: ${message.CustName}` +
+      `TradeChannel: ${message.TradeChannel}` +
       `hash: ${message.hash}`)
   }
 

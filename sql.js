@@ -23,62 +23,49 @@ class SQL {
     }
 
     async readRecords(limit, offset) {
-        let model = models.Product
+        let model = models.Customer
         let records = []
 
         records = await model.findAll({
             limit: limit,
             offset: offset,
-            attributes: ["due_perd"],
-            include: [
-                {
-                    model: models.Customer,
-                    attributes: ["customercode", "customername", "tradechannel"],
-                }
-            ]
+            attributes: ["customercode", "customername", "tradechannel", "due_perd"]
         }).then(res => {
-            let result = []
+            console.log(res)
+            let result = [];
 
             if (res.length > 0) {
 
                 res.forEach(element => {
-
-                    let recordDate = element.due_perd
-                    let CustID = element.Customer.customercode
-                    let CustName = element.Customer.customername
-                    let TradeChannel = element.Customer.tradechannel
-                    result.push({ recordDate, CustID, CustName, TradeChannel })
+                    
+                    let CustID = element.customercode;
+                    let CustName = element.customername;
+                    let recordDate = element.due_perd;
+                    let TradeChannel = element.tradechannel;
+                    result.push({ CustID, CustName, recordDate, TradeChannel });
                 });
             }
-            return result
+            return result;
         })
 
         return records
     }
 
-    async readRecord(CustID, date) {
-        let model = models.Product
+    async readRecord(CustID, recordDate, TradeChannel) {
+        let model = models.Customer
         let record
 
         record = await model.findAll({
             attributes: ["id"],
             where: {
-                due_perd: date
-            },
-
-            include: [
-                {
-                    model: models.Customer,
-                    attributes: ["id"],
-                    where: {
-                        customercode: CustID,
-                    }
-                }
-            ]
+                customercode: CustID,
+                due_perd : recordDate,
+                tradechannel: TradeChannel
+            }
         }).then(res => {
             //console.log(res)
             if (res.length > 0) {
-                let customerId = res[0].Customer.id
+                let customerId = res[0].id
                 let record = { customerId }
                 return record
             }
@@ -87,16 +74,16 @@ class SQL {
         return record
     }
 
-    async readAnomalous(CustID, recordDate, TradeChannel) {
+    async readAnomalous(customerId, recordDate, TradeChannel) {
         let model = models.Anomalou
         let Anomalous
 
         Anomalous = await model.findAll({
             attributes: ["id"],
             where: {
-                customerId: CustID,
-                new_tradechannel: TradeChannel,
-                due_perd: recordDate
+                customerId: customerId,
+                due_perd: recordDate,
+                new_tradechannel: TradeChannel
             }
 
         }).then(res => {
@@ -110,15 +97,15 @@ class SQL {
         return Anomalous
     }
 
-    async insertAnomalous(customerId, date, new_tradechannel) {
+    async insertAnomalous(customerId, recordDate, TradeChannel) {
         // console.log(date)
         let model = await models.Anomalou
         let status
 
         status = model.create({
             customerId: customerId,
-            due_perd: date,
-            new_tradechannel: new_tradechannel
+            due_perd: recordDate,
+            new_tradechannel: TradeChannel
         }).then(res => {
             if (res.length > 0) {
                 return true
