@@ -6,7 +6,7 @@ const request = require('request')
 let logger = require('perfect-logger');
 
 // Configure Settings
-logger.setLogDirectory("./");
+logger.setLogDirectory("./logs");
 logger.setLogFileName("client");
 
 // Initialize
@@ -111,7 +111,7 @@ class VaultClient {
     }, (err, response) => {
       if (err) return console.log(err)
       console.log(response.body)
-      logger.info("\n" + response.body + "\n");
+      logger.info(response.body);
     })
   }
   // async SubmitBatch(batchListBytes) {
