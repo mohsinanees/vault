@@ -6,7 +6,7 @@ const request = require('request')
 let logger = require('perfect-logger');
 
 // Configure Settings
-logger.setLogDirectory("./logs");
+logger.setLogDirectory("/home/dawood.ud/logs");
 logger.setLogFileName("client");
 
 // Initialize
