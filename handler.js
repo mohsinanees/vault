@@ -2,19 +2,20 @@
 const { createHash } = require('crypto')
 const cbor = require('cbor')
 var colors = require('colors')
+const { TransactionHandler } = require('sawtooth-sdk/processor/handler')
+const { InvalidTransaction } = require('sawtooth-sdk/processor/exceptions')
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
-
 const VaultPayload = require('./payload')
 const SQL = require('./sql')
 let flogger = require('perfect-logger');
-
 flogger.setLogDirectory("/home/mohsin/logs");
 flogger.setLogFileName("vault_processor");
 
 flogger.initialize();
-
-const { TransactionHandler } = require('sawtooth-sdk/processor/handler')
-const { InvalidTransaction } = require('sawtooth-sdk/processor/exceptions')
+const csvWriter = createCsvWriter({
+  path: '/home/mohsin/Documents/CSV_files/Pre_Processed/complete.csv', append: true,
+  header: ['CUST_ID', 'CustomerName', 'TradeChannel', 'DUE_PERD']
+});
 
 const { VAULT_FAMILY,
   VERSION,
