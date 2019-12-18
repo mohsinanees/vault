@@ -4,8 +4,6 @@
 const { InvalidTransaction } = require('sawtooth-sdk/processor/exceptions')
 const { createHash } = require('crypto')
 const cbor = require('cbor')
-const { Random } = require("random-js")
-const random = new Random();
 
 class VaultPayload {
     constructor(CustID, CustName, TradeChannel, recordDate) {

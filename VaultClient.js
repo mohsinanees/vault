@@ -4,19 +4,20 @@ const { protobuf } = require('sawtooth-sdk')
 const cbor = require('cbor')
 const request = require('request')
 let logger = require('perfect-logger');
-
-// Configure Settings
-logger.setLogDirectory("/home/dawood.ud/logs");
-logger.setLogFileName("client");
-
-// Initialize
-logger.initialize();
-
+const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 const { Secp256k1PrivateKey } = require('sawtooth-sdk/signing/secp256k1')
 const VaultPayload = require('./payload')
 const { VAULT_FAMILY, VERSION, _genVaultAddress } = require('./namespace');
-const { BATCH_URL } = require("./config")
+const { BATCH_URL, Log_Dir } = require("./config")
 
+logger.setLogDirectory(Log_Dir);
+logger.setLogFileName("client");
+logger.initialize();
+const csvWriter = createCsvWriter({
+  path: '/home/mohsin/Documents/test.csv',append: true,
+  header: ['CUST_ID', 'CustomerName', 'TradeChannel', 
+           'DUE_PERD' ]
+});
 class VaultClient {
   constructor(privateKeyHex) {
     this.context = createContext('secp256k1')
@@ -28,7 +29,7 @@ class VaultClient {
   async CreateTransactions(records, dbHandler) {
     const signer = this.signer
     const signerPubKey = signer.getPublicKey().asHex()
-
+  
     let address
     let transactions = []
     records.forEach(async (StringifiedRecord) => {

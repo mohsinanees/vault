@@ -2,11 +2,13 @@
 const { createHash } = require('crypto')
 const cbor = require('cbor')
 var colors = require('colors')
+const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 
 const VaultPayload = require('./payload')
 const SQL = require('./sql')
 let flogger = require('perfect-logger');
-flogger.setLogDirectory("/home/dawood.ud/logs");
+
+flogger.setLogDirectory("/home/mohsin/logs");
 flogger.setLogFileName("vault_processor");
 
 flogger.initialize();
@@ -21,6 +23,8 @@ const { VAULT_FAMILY,
 
 const { DEBUG, WARN } = require("./config");
 
+var count = 0
+
 const _setEntry = (context, address, stateValue) => {
   let entries = {
     [address]: cbor.encode(stateValue)
@@ -31,43 +35,64 @@ const _setEntry = (context, address, stateValue) => {
 const _applySet = (context, address, payload) => async (possibleAddressValues) => {
   let stateValueRep = possibleAddressValues[address]
   const sql = new SQL()
-
+  let message = {...payload}
   let stateValue;
+
   if (stateValueRep && stateValueRep.length > 0) {
 
     stateValue = cbor.decodeFirstSync(stateValueRep)
-    let stateHash = stateValue['hash']
 
-    if (stateHash != payload.hash) {
+    if (stateValue.hash != payload.hash) {
 
-      const record = await sql.readRecord(payload.CustID, payload.recordDate, payload.TradeChannel)
-      console.log("\n", record)
+    //   const record = await sql.readRecord(payload.CustID, payload.recordDate, payload.TradeChannel)
+    //   console.log("\n", record)
 
-      if (record) {
-        //console.log(finalDate)
-        let status = await sql.readAnomalous(record.customerId, payload.recordDate, payload.TradeChannel)
-        // console.log("\n", status)
-        if (!status) {
-          let stat = await sql.insertAnomalous(record.customerId, payload.recordDate, payload.TradeChannel).catch(err => {
-            throw err
-          })
-          //console.log(stat)
-        }
-
-      }
-      const message = payload
-      message['stateHash'] = stateHash
-      logger(message, WARN)
+    //   if (record) {
+    //     //console.log(finalDate)
+    //     let status = await sql.readAnomalous(record.customerId, payload.recordDate, payload.TradeChannel)
+    //     // console.log("\n", status)
+    //     if (!status) {
+    //       let stat = await sql.insertAnomalous(record.customerId, payload.recordDate, payload.TradeChannel).catch(err => {
+    //         throw err
+    //       })
+    //       //console.log(stat)
+    //     }
+    message['Prev_TradeChannel'] = stateValue.TradeChannel
+    message['Prev_StateHash'] = stateValue.hash
+    if(count == 0) {
+        message['Anomalous_Status'] = 'true'
+        logger(message, WARN)
+        await csvWriter.writeRecords([message])
+        count++ 
+    } else {
+        count = 0
     }
 
-  }
+    } else {
+        if(count == 0) {
+            message['Anomalous_Status'] = 'false'
+            logger(message, DEBUG)
+            await csvWriter.writeRecords([message])
+            count++ 
+        } else {
+            count = 0
+        }
+    }
+    
 
-  if (!stateValue) {
-    stateValue = payload
   } else {
-    stateValue['hash'] = payload.hash
-  }
-
+    if(count == 0) {
+        message['Anomalous_Status'] = 'false'
+        message['Prev_TradeChannel'] = 'null'
+        message['Prev_StateHash'] = 'null'
+        logger(message, DEBUG)
+        await csvWriter.writeRecords([message])
+        count++ 
+    } else {
+        count = 0
+    }
+ }
+  stateValue = {...payload}
   return _setEntry(context, address, stateValue)
 }
 
@@ -100,10 +125,7 @@ class VaultHandler extends TransactionHandler {
     return actionPromise.then(addresses => {
       if (addresses.length === 0) {
         throw new InternalError('State Error!')
-      } else {
-        const message = payload
-        logger(message, DEBUG)
-      }
+      } 
     })
 
   }
@@ -117,17 +139,18 @@ const logger = (message, log) => {
       `Hash in the state does not match the hash in Transaction\n` +
       `CustID: ${message.CustID}\n` +
       `Name: ${message.CustName}\n` +
-      `TradeChannel: ${message.TradeChannel}\n` +
+      `TradeChannel: ${message.TradeChannel}\n`.red +
       `hash: ${message.hash}\n`.yellow +
-      `Previous State hash: ${message.stateHash}`.yellow)
+      `Prev_TradeChannel: ${message.Prev_TradeChannel}`.yellow +
+      `Previous Statehash: ${message.Prev_StateHash}`.yellow)
     flogger.warn(('[' + new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '') + ' ' +
       WARN + '\tvault_processor' + ']').yellow +
       `Hash in the state does not match the hash in Transaction` +
       `CustID: ${message.CustID}` +
       `Name: ${message.CustName}` +
       `TradeChannel: ${message.TradeChannel}` +
-      `hash: ${message.hash}`.yellow +
-      `Previous State hash: ${message.stateHash}`.yellow);
+      `Prev_TradeChannel: ${message.Prev_TradeChannel}`.yellow +
+      `Previous Statehash: ${message.Prev_StateHash}`.yellow)
   } else if (log == DEBUG) {
     console.log(('[' + new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '') + ' ' +
       DEBUG + '\tvault_processor' + ']').green + '\n' +

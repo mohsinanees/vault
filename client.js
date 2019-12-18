@@ -1,18 +1,14 @@
 const SQL = require('./sql')
 const USER = require("os").userInfo().username
 const fs = require('fs')
-const privateKeyHex = fs.readFileSync(`/home/dawood.ud/.sawtooth/keys/dawood.ud.priv`, 'utf8')
+const privateKeyHex = fs.readFileSync(`/home/mohsin/.sawtooth/keys/mohsin.priv`, 'utf8')
 const VaultClient = require("./VaultClient")
 const csv = require('csv-parser')
+const logger = require('perfect-logger');
+const { Log_Dir } = require("./config")
 
-// Load the perfect-logger module
-let logger = require('perfect-logger');
-
-// Configure Settings
-logger.setLogDirectory("/home/dawood.ud/logs");
+logger.setLogDirectory(Log_Dir);
 logger.setLogFileName("client");
-
-// Initialize
 logger.initialize();
 
 var UFrecords = [];
@@ -32,7 +28,7 @@ const client = new VaultClient(privateKeyHex)
 
 async function execute(offset) {
 
-  const records = Frecords.slice(offset, offset + 100)//await sql.readRecords(100, offset)
+  const records = Frecords.slice(offset, offset + 25)//await sql.readRecords(100, offset)
   // let frecords = []
   // await records.forEach(element => {
   // frecords.push(JSON.stringify(element))
@@ -44,8 +40,8 @@ async function execute(offset) {
 
 
 async function main() {
-  fs.createReadStream('./test30.csv')
-    .pipe(csv())
+  fs.createReadStream('/home/mohsin/Documents/CSV_files/Analysis P_G/Csvs/APIAT_IS_DAILY_20191031.csv')
+    .pipe(csv(['DUE_PERD', 'CUST_ID', 'CustomerName', 'TradeChannel']))
     .on('data', (data) => UFrecords.push(data))
     .on('end', async () => {
       // console.log(results.slice(0, 10))
@@ -60,15 +56,27 @@ async function main() {
 
 }
 
+var delay  
+
 async function loadRecords() {
   // console.log("LoadFunction")
   console.log()
 
-  for (var i = 0; i < Frecords.length; i = i + 100) {
-    await sleep(5000)
+  for (var i = 0 , limit = 25; i < Frecords.length; i = i + limit) {
+    if(Frecords.length - i < limit) {
+      if(Frecords.length % limit != 0) {
+        limit = Frecords - i
+      }
+    }
+    if( i != 0 && i % 2500 == 0) {
+      delay = 7000
+    } else {
+      delay = 2000
+    }
+    await sleep(delay)
     await execute(i)
     console.log("\n" + i + "\n")
-    logger.info(i.toString());
+    logger.info(i.toString())
   }
 }
 
