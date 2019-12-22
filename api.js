@@ -44,7 +44,7 @@ app.listen(PORT, () => {
 const getHistory = async (stateAddress, offset) => {
 
     let parameters = {
-        limit: 1000000
+        limit: 46000
     }
 
     return await axios.get('http://127.0.0.1:8008/transactions',
@@ -53,6 +53,7 @@ const getHistory = async (stateAddress, offset) => {
         }
     ).then(response => {
         const transactions = response.data;
+        console.log(transactions.data.length)
         let res = []
         let payloadList = []
         let hash

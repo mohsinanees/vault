@@ -8,11 +8,11 @@ var ParsedRecords = [];
 var Frecords = [];
 
 const csvWriter = createCsvWriter({
-  path: '/home/mohsin/Documents/CSV_files/Pre_Processed/complete.csv', append: true,
+  path: '/home/mohsin/Documents/CSV_files/Pre_Processed/test.csv', append: true,
   header: ['CUST_ID', 'CustomerName', 'TradeChannel', 'DUE_PERD']
 });
 
-fs.createReadStream('/home/mohsin/Documents/CSV_files/Analysis P_G/Csvs/APIAT_IS_DAILY_20191210.csv')
+fs.createReadStream('/home/mohsin/Documents/CSV_files/Pre_Processed/PreProcessed.csv')
     .pipe(csv())
     .on('data', (data) => UFrecords.push(data))
     .on('end', async () => {

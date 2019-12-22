@@ -40,14 +40,18 @@ async function execute(offset) {
 
 
 async function main() {
-  fs.createReadStream('/home/mohsin/Documents/CSV_files/Analysis P_G/Csvs/APIAT_IS_DAILY_20191031.csv')
-    .pipe(csv(['DUE_PERD', 'CUST_ID', 'CustomerName', 'TradeChannel']))
+  fs.createReadStream('/home/mohsin/Documents/CSV_files/Pre_Processed/PreProcessed.csv')
+    .pipe(csv())
     .on('data', (data) => UFrecords.push(data))
     .on('end', async () => {
       // console.log(results.slice(0, 10))
       console.log(UFrecords.length)
       UFrecords.forEach(element => {
-        ParsedRecords.push(JSON.stringify(element))
+        let obj = {'CUST_ID': element.CUST_ID,
+                   'CustomerName': element.CustomerName,
+                   'TradeChannel': element.TradeChannel,
+                   'DUE_PERD': element.DUE_PERD}
+        ParsedRecords.push(JSON.stringify(obj))
       })
       Frecords = [...new Set(ParsedRecords)]
       console.log(Frecords.length)

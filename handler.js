@@ -13,8 +13,9 @@ flogger.setLogFileName("vault_processor");
 
 flogger.initialize();
 const csvWriter = createCsvWriter({
-  path: '/home/mohsin/Documents/CSV_files/Pre_Processed/complete.csv', append: true,
-  header: ['CUST_ID', 'CustomerName', 'TradeChannel', 'DUE_PERD']
+  path: '/home/mohsin/Documents/CSV_files/Pre_Processed/Blockchain.csv', append: true,
+  header: ['CustID', 'CustName', 'recordDate', 'TradeChannel',
+  'Prev_TradeChannel', 'hash', 'Prev_StateHash', 'Anomalous_Status']
 });
 
 const { VAULT_FAMILY,
@@ -42,6 +43,8 @@ const _applySet = (context, address, payload) => async (possibleAddressValues) =
   if (stateValueRep && stateValueRep.length > 0) {
 
     stateValue = cbor.decodeFirstSync(stateValueRep)
+    message['Prev_TradeChannel'] = stateValue.TradeChannel
+    message['Prev_StateHash'] = stateValue.hash
 
     if (stateValue.hash != payload.hash) {
 
@@ -58,16 +61,15 @@ const _applySet = (context, address, payload) => async (possibleAddressValues) =
     //       })
     //       //console.log(stat)
     //     }
-    message['Prev_TradeChannel'] = stateValue.TradeChannel
-    message['Prev_StateHash'] = stateValue.hash
-    if(count == 0) {
-        message['Anomalous_Status'] = 'true'
-        logger(message, WARN)
-        await csvWriter.writeRecords([message])
-        count++ 
-    } else {
-        count = 0
-    }
+    
+      if(count == 0) {
+          message['Anomalous_Status'] = 'true'
+          logger(message, WARN)
+          await csvWriter.writeRecords([message])
+          count++ 
+      } else {
+          count = 0
+      }
 
     } else {
         if(count == 0) {
@@ -83,9 +85,9 @@ const _applySet = (context, address, payload) => async (possibleAddressValues) =
 
   } else {
     if(count == 0) {
-        message['Anomalous_Status'] = 'false'
         message['Prev_TradeChannel'] = 'null'
         message['Prev_StateHash'] = 'null'
+        message['Anomalous_Status'] = 'false'
         logger(message, DEBUG)
         await csvWriter.writeRecords([message])
         count++ 
