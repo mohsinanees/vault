@@ -26,9 +26,10 @@ const client = new VaultClient(privateKeyHex)
 //   recordDate: "2019-10-01"
 // }
 
-async function execute(offset) {
-
-  const records = Frecords.slice(offset, offset + 25)//await sql.readRecords(100, offset)
+async function execute(limit, offset) 
+{ 
+ // const records = Frecords.slice(offset, offset + 25)
+    let records = await sql.readRecords(limit, offset)
   // let frecords = []
   // await records.forEach(element => {
   // frecords.push(JSON.stringify(element))
@@ -38,47 +39,55 @@ async function execute(offset) {
   await client.SubmitBatch(batch)
 }
 
+///home/mohsin/Documents/CSV_files/Pre_Processed/PreProcessed.csv
 
-async function main() {
-  fs.createReadStream('/home/mohsin/Documents/CSV_files/Pre_Processed/PreProcessed.csv')
-    .pipe(csv())
-    .on('data', (data) => UFrecords.push(data))
-    .on('end', async () => {
-      // console.log(results.slice(0, 10))
-      console.log(UFrecords.length)
-      UFrecords.forEach(element => {
-        let obj = {'CUST_ID': element.CUST_ID,
-                   'CustomerName': element.CustomerName,
-                   'TradeChannel': element.TradeChannel,
-                   'DUE_PERD': element.DUE_PERD}
-        ParsedRecords.push(JSON.stringify(obj))
-      })
-      Frecords = [...new Set(ParsedRecords)]
-      console.log(Frecords.length)
-      await loadRecords()
-    })
+// async function main() {
+//   fs.createReadStream('/home/ibneali/Desktop/FullDataBlockchain-11Jan/CompleteData.csv')
+//     .pipe(csv())
+//     .on('data', (data) => UFrecords.push(data))
+//     .on('end', async () => {
+//       // console.log(results.slice(0, 10))
+//       console.log(UFrecords.length)
+//       UFrecords.forEach(element => {
+//         let obj = {'CUST_ID': element.CUST_ID,
+//                    'CustomerName': element.CustomerName,
+//                    'TradeChannel': element.TradeChannel,
+//                    'DUE_PERD': element.DUE_PERD}
+//         ParsedRecords.push(JSON.stringify(obj))
+//       })
+//       Frecords = [...new Set(ParsedRecords)]
+//       console.log(Frecords.length)
+//       await loadRecords()
+//     })
 
-}
+// }
 
 var delay  
 
 async function loadRecords() {
   // console.log("LoadFunction")
   console.log()
+  var recordSize = await sql.readCount();
+  //console.log(recordSize);
+  //await sql.readRecords(0, 0).length;
 
-  for (var i = 0 , limit = 25; i < Frecords.length; i = i + limit) {
-    if(Frecords.length - i < limit) {
-      if(Frecords.length % limit != 0) {
-        limit = Frecords - i
+  console.log(recordSize);
+
+  for (var i =  20938, limit = 25; i < recordSize; i = i + limit) {
+    if(recordSize - i < limit) {
+      if(recordSize % limit != 0) {
+        limit = recordSize - i
       }
     }
-    if( i != 0 && i % 2500 == 0) {
+    if( i != 0 && i % 2500 == 0 ) {
+      //7000
       delay = 7000
     } else {
+     //2000
       delay = 2000
     }
     await sleep(delay)
-    await execute(i)
+    await execute(limit, i)
     console.log("\n" + i + "\n")
     logger.info(i.toString())
   }
@@ -90,4 +99,5 @@ function sleep(ms) {
   })
 }
 
-main()
+loadRecords()
+//main()

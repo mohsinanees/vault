@@ -13,7 +13,7 @@ flogger.setLogFileName("vault_processor");
 
 flogger.initialize();
 const csvWriter = createCsvWriter({
-  path: '/home/mohsin/Documents/CSV_files/Pre_Processed/Blockchain.csv', append: true,
+  path: '/home/mohsin/Documents/CSV_files/Pre_Processed/test786786.csv', append: true,
   header: ['CustID', 'CustName', 'recordDate', 'TradeChannel',
   'Prev_TradeChannel', 'hash', 'Prev_StateHash', 'Anomalous_Status']
 });
@@ -66,7 +66,13 @@ const _applySet = (context, address, payload) => async (possibleAddressValues) =
           message['Anomalous_Status'] = 'true'
           logger(message, WARN)
           await csvWriter.writeRecords([message])
+          let result = await sql.readRecord( payload.CustID, payload.recordDate, payload.TradeChannel)
+          if(result) {
+            console.log("Blah = "+ result);
+            let status = await sql.insertAnomalous(result, payload.recordDate, payload.TradeChannel )
+          }
           count++ 
+           
       } else {
           count = 0
       }

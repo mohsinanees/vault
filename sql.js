@@ -22,7 +22,7 @@ class SQL {
 
     }
 
-    async readRecords(limit, offset) {
+    async readRecords( limit, offset) {
         let model = models.Customer
         let records = []
 
@@ -31,7 +31,7 @@ class SQL {
             offset: offset,
             attributes: ["customercode", "customername", "tradechannel", "due_perd"]
         }).then(res => {
-            console.log(res)
+           // console.log(res)
             let result = [];
 
             if (res.length > 0) {
@@ -47,31 +47,36 @@ class SQL {
             }
             return result;
         })
-
         return records
     }
+
+    async readCount() {
+        let model = models.Customer
+        let count = await model.findAll({
+            attributes: ["customercode", "customername", "tradechannel", "due_perd"]
+        });
+        return count.length;
+    }
+
 
     async readRecord(CustID, recordDate, TradeChannel) {
         let model = models.Customer
         let record
 
-        record = await model.findAll({
+        let result = await model.findAll({
             attributes: ["id"],
             where: {
                 customercode: CustID,
                 due_perd : recordDate,
                 tradechannel: TradeChannel
             }
-        }).then(res => {
+        })
             //console.log(res)
-            if (res.length > 0) {
-                let customerId = res[0].id
-                let record = { customerId }
+            if (result.length > 0) {
+                let customerId = result[0].id
+                let record =  customerId 
                 return record
             }
-        })
-
-        return record
     }
 
     async readAnomalous(customerId, recordDate, TradeChannel) {
@@ -102,14 +107,10 @@ class SQL {
         let model = await models.Anomalou
         let status
 
-        status = model.create({
+        status = await model.create({
             customerId: customerId,
             due_perd: recordDate,
             new_tradechannel: TradeChannel
-        }).then(res => {
-            if (res.length > 0) {
-                return true
-            }
         })
 
         return status

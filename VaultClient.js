@@ -33,12 +33,14 @@ class VaultClient {
     let address
     let transactions = []
     records.forEach(async (StringifiedRecord) => {
-      let record = JSON.parse(StringifiedRecord)
-      const payload = new VaultPayload(
-        record.CUST_ID,
-        record.CustomerName,
+    //  let record = //JSON.parse(StringifiedRecord)
+    let record = StringifiedRecord
+      
+    const payload = new VaultPayload(
+        record.CustID,
+        record.CustName,
         record.TradeChannel,
-        record.DUE_PERD)
+        record.recordDate)
 
       // let res = dbHandler.readAddress(payload.CustID);
       // // console.log("getting res data here ")

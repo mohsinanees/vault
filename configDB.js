@@ -2,12 +2,12 @@ require('dotenv').config()
 
 module.exports = {
   development: {
-    host: "137.182.194.140",
+    host: "192.168.0.164",
     driver: "postgres",
-    username: "blockchain_user",
+    username: "postgres",
     port: "5432",
-    database: "blockchain",
-    password: "fjaldsf(*8jk_jfa",
+    database: "blockchain_DEV",
+    password: "123456",
     dialect: "postgres",
     logging: false
   },
@@ -20,4 +20,3 @@ module.exports = {
     dialect: 'postgres',
   },
 }
-
