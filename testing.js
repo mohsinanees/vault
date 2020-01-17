@@ -48,7 +48,7 @@ const SQL = require('./sql')
 
  let sql = new SQL();
  //sql.readRecords(20,20)
-  sql.insertAnomalous("3631", "2019-10-08", "HFS Small T.G.").then(res =>{
+  sql.readRecord("274380001095427", "2019-10-06", "").then(res =>{
 console.log(res)
 
  }) 

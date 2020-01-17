@@ -20,21 +20,21 @@ class VaultPayload {
         let res = cbor.decode(payload)
         if (res) {
 
-            if (!res.CustID) {
-                res.CustID = "N/A"
-            }
+            // if (!res.CustID) {
+            //     res.CustID = "N/A"
+            // }
 
-            if (!res.CustName) {
-                res.CustName = "N/A"
-            }
+            // if (!res.CustName) {
+            //     res.CustName = "N/A"
+            // }
 
-            if (!res.TradeChannel) {
-                res.TradeChannel = "N/A"
-            }
+            // if (!res.TradeChannel) {
+            //     res.TradeChannel = "N/A"
+            // }
 
-            if (!res.recordDate) {
-                res.recordDate = "N/A"
-            }
+            // if (!res.recordDate) {
+            //     res.recordDate = "N/A"
+            // }
 
             return new VaultPayload(res.CustID, res.CustName, res.TradeChannel, res.recordDate)
         } else {

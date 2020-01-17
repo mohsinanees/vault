@@ -64,19 +64,20 @@ class SQL {
         let record
 
         let result = await model.findAll({
-            attributes: ["id"],
+            attributes: ["id", "customercode", "due_perd", "tradechannel"],
             where: {
                 customercode: CustID,
                 due_perd : recordDate,
                 tradechannel: TradeChannel
             }
         })
-            //console.log(res)
             if (result.length > 0) {
                 let customerId = result[0].id
                 let record =  customerId 
                 return record
-            }
+            } else {
+               return null
+           }
     }
 
     async readAnomalous(customerId, recordDate, TradeChannel) {
@@ -102,7 +103,7 @@ class SQL {
         return Anomalous
     }
 
-    async insertAnomalous(customerId, recordDate, TradeChannel) {
+    async insertAnomaly(customerId, recordDate, TradeChannel) {
         // console.log(date)
         let model = await models.Anomalou
         let status

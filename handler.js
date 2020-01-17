@@ -13,7 +13,7 @@ flogger.setLogFileName("vault_processor");
 
 flogger.initialize();
 const csvWriter = createCsvWriter({
-  path: '/home/mohsin/Documents/CSV_files/Pre_Processed/test786786.csv', append: true,
+  path: '/home/mohsin/Documents/CSV_files/Pre_Processed/AKC12.csv', append: true,
   header: ['CustID', 'CustName', 'recordDate', 'TradeChannel',
   'Prev_TradeChannel', 'hash', 'Prev_StateHash', 'Anomalous_Status']
 });
@@ -41,42 +41,32 @@ const _applySet = (context, address, payload) => async (possibleAddressValues) =
   let stateValue;
 
   if (stateValueRep && stateValueRep.length > 0) {
-
     stateValue = cbor.decodeFirstSync(stateValueRep)
     message['Prev_TradeChannel'] = stateValue.TradeChannel
     message['Prev_StateHash'] = stateValue.hash
 
     if (stateValue.hash != payload.hash) {
-
-    //   const record = await sql.readRecord(payload.CustID, payload.recordDate, payload.TradeChannel)
-    //   console.log("\n", record)
-
-    //   if (record) {
-    //     //console.log(finalDate)
-    //     let status = await sql.readAnomalous(record.customerId, payload.recordDate, payload.TradeChannel)
-    //     // console.log("\n", status)
-    //     if (!status) {
-    //       let stat = await sql.insertAnomalous(record.customerId, payload.recordDate, payload.TradeChannel).catch(err => {
-    //         throw err
-    //       })
-    //       //console.log(stat)
-    //     }
-    
       if(count == 0) {
           message['Anomalous_Status'] = 'true'
           logger(message, WARN)
           await csvWriter.writeRecords([message])
-          let result = await sql.readRecord( payload.CustID, payload.recordDate, payload.TradeChannel)
+          // let TradeChannel = payload.TradeChannel
+          // if ( payload.TradeChannel == "N/A") {
+          //   TradeChannel = ''
+          // }
+          let result = await sql.readRecord( payload.CustID, payload.recordDate, payload.TradeChannel )
           if(result) {
-            console.log("Blah = "+ result);
-            let status = await sql.insertAnomalous(result, payload.recordDate, payload.TradeChannel )
+            console.log("\n\nBlah = \n\n"+ result);
+            let status = await sql.insertAnomaly( result, payload.recordDate, payload.TradeChannel )
+            if (status) {
+              console.log("\n ===========Anomaly inserted in AKC=========== \n")
+            }
           }
           count++ 
            
       } else {
           count = 0
       }
-
     } else {
         if(count == 0) {
             message['Anomalous_Status'] = 'false'
@@ -87,8 +77,6 @@ const _applySet = (context, address, payload) => async (possibleAddressValues) =
             count = 0
         }
     }
-    
-
   } else {
     if(count == 0) {
         message['Prev_TradeChannel'] = 'null'

@@ -6,7 +6,7 @@ const request = require('request')
 let logger = require('perfect-logger');
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 const { Secp256k1PrivateKey } = require('sawtooth-sdk/signing/secp256k1')
-const VaultPayload = require('./payload')
+//const VaultPayload = require('./payload')
 const { VAULT_FAMILY, VERSION, _genVaultAddress } = require('./namespace');
 const { BATCH_URL, Log_Dir } = require("./config")
 
@@ -36,31 +36,23 @@ class VaultClient {
     //  let record = //JSON.parse(StringifiedRecord)
     let record = StringifiedRecord
       
-    const payload = new VaultPayload(
-        record.CustID,
-        record.CustName,
-        record.TradeChannel,
-        record.recordDate)
-
-      // let res = dbHandler.readAddress(payload.CustID);
-      // // console.log("getting res data here ")
-      // if (res) {
-      //   address = res
-      // } else {
-      //   let addrRecord = dbHandler.readRecord(payload.CustID, payload.recordDate)
+    const payload = {
+      CustID: record.CustID,
+      CustName: record.CustName,
+      TradeChannel: record.TradeChannel,
+      recordDate: record.recordDate,
+      hash: createHash('sha256').update(JSON.stringify([ record.CustID, record.CustName, 
+        record.TradeChannel, record.recordDate ])).digest('hex')
+    }
       address = _genVaultAddress(payload.CustID)
-      //    dbHandler.insertAddress(addrRecord.customerId, address.toString())
-      // }
-
       const payloadBytes = cbor.encode(payload)
-      //console.log("creating")
       const transactionHeaderBytes = protobuf.TransactionHeader.encode({
         familyName: VAULT_FAMILY,
         familyVersion: VERSION,
         inputs: [address],
         outputs: [address],
         signerPublicKey: signerPubKey,
-        nonce: new Date().toISOString(),
+        nonce: new Date().getTime().toString(),
         batcherPublicKey: signerPubKey,
         dependencies: [],
         payloadSha512: createHash('sha512').update(payloadBytes).digest('hex')
@@ -68,7 +60,6 @@ class VaultClient {
       //console.log("finish")
 
       const signature = signer.sign(transactionHeaderBytes)
-
       const transaction = protobuf.Transaction.create({
         header: transactionHeaderBytes,
         headerSignature: signature,
@@ -77,12 +68,8 @@ class VaultClient {
       //console.log("done")
       transactions.push(transaction)
     })
-
-    //console.log("out of second then")
-    //let filteredTransactions = [...new Set(transactions)];
-    //	console.log(filteredTransactions )
+    
     return transactions
-
   }
 
   async CreateBatch(transactions) {

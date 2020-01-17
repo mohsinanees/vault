@@ -73,7 +73,7 @@ async function loadRecords() {
 
   console.log(recordSize);
 
-  for (var i =  20938, limit = 25; i < recordSize; i = i + limit) {
+  for (var i =  0, limit = 25; i < recordSize; i = i + limit) {
     if(recordSize - i < limit) {
       if(recordSize % limit != 0) {
         limit = recordSize - i
