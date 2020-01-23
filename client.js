@@ -99,5 +99,7 @@ function sleep(ms) {
   })
 }
 
-loadRecords()
+//loadRecords()
 //main()
+
+module.exports = loadRecords

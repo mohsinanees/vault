@@ -41,8 +41,7 @@ class VaultClient {
       CustName: record.CustName,
       TradeChannel: record.TradeChannel,
       recordDate: record.recordDate,
-      hash: createHash('sha256').update(JSON.stringify([ record.CustID, record.CustName, 
-        record.TradeChannel, record.recordDate ])).digest('hex')
+      hash: createHash('sha256').update(JSON.stringify([ record.CustID, record.TradeChannel ])).digest('hex')
     }
       address = _genVaultAddress(payload.CustID)
       const payloadBytes = cbor.encode(payload)
