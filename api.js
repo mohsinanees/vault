@@ -15,6 +15,7 @@ var OFFSET
 var offset = ''
 var end  = '4726d367f6e064a532d6baf2e180f51d251128639e447e5dd8c350f45ec1787f3e819493183b485fc2e202fb9f0f350e2eb9a98677bfffbb583086b9f601b7d0'
 var hash = ''
+var customerHistory = []
 
 app.get('/history/:id', async (req, res) => {
     let CustID = req.params.id
@@ -36,21 +37,32 @@ app.get('/history/:id', async (req, res) => {
         //     res.status(200).send(data)
         // }
 
-        let customerHistory = []
+        // let customerHistory = []
         let data = ' '
         while (data) {
             console.log(offset)
-            let data = await getHistory(address)
-            // console.log(data)
+            await getHistory(address)
             if (offset == end) {
                 break
             }
-            customerHistory.push(data)
         } 
         customerHistory = customerHistory.filter(String)
-        offset = ''
-        // console.log(customerHistory)
+        let hash
+        if (customerHistory.length > 0) {
+            hash = customerHistory[customerHistory.length - 1].hash
+            for (i = customerHistory.length - 1; i >= 0; i--) {
+                let status = true
+                if (hash != customerHistory[i].hash) {
+                    hash = customerHistory[i].hash
+                    status = false
+                }
+                customerHistory[i]["status"] = status
+            }
+        }
         res.status(200).send(customerHistory)
+        offset = ''
+        hash = ''
+        customerHistory = []
     }
 
 });
@@ -73,7 +85,6 @@ const getHistory = async (stateAddress) => {
     )
         const transactions = response.data;
         // console.log(transactions.data.length)
-        let res = []
         let payloadList = []
         // let hash
 
@@ -85,30 +96,16 @@ const getHistory = async (stateAddress) => {
         })
 
         // payloadList = payloadList.slice(offset, offset + 10)
-
-        if (payloadList.length > 0 && hash == '') {
-
-            let data = Buffer.from(payloadList[0], 'base64')
-            data = cbor.decode(data)
-            hash = data.hash
-        }
-
         payloadList.forEach(element => {
 
             let data = Buffer.from(element, 'base64')
-            let status = true
             data = cbor.decode(data)
-            console.log("\nhash:")
-            console.log(data.hash + "\n")
-            if (hash != data.hash) {
-                hash = data.hash
-                status = false
-            }
-            data["status"] = status
-            res.push(data)
+            // console.log("\nhash:")
+            // console.log(data.hash + "\n")
+            customerHistory.push(data)
         })
         // console.log(res)
         offset = transactions.data[transactions.data.length - 1].header_signature
         // console.log(offset)
-        return res
+        // return res
 };
