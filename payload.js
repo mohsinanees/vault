@@ -36,7 +36,7 @@ class VaultPayload {
             //     res.recordDate = "N/A"
             // }
 
-            return new VaultPayload(res.CustID, res.CustName, res.TradeChannel, 
+            return new VaultPayload(res.CustID, res.CustName, res.TradeChannel,
                 res.recordDate, res.hash)
         } else {
             throw new InvalidTransaction('Invalid payload serialization')

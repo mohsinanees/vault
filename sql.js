@@ -22,7 +22,7 @@ class SQL {
 
     }
 
-    async readRecords( limit, offset) {
+    async readRecords(limit, offset) {
         let model = models.Customer
         let records = []
 
@@ -31,13 +31,13 @@ class SQL {
             offset: offset,
             attributes: ["customercode", "customername", "tradechannel", "due_perd"]
         }).then(res => {
-           // console.log(res)
+            // console.log(res)
             let result = [];
 
             if (res.length > 0) {
 
                 res.forEach(element => {
-                    
+
                     let CustID = element.customercode;
                     let CustName = element.customername;
                     let recordDate = element.due_perd;
@@ -67,17 +67,17 @@ class SQL {
             attributes: ["id", "customercode", "due_perd", "tradechannel"],
             where: {
                 customercode: CustID,
-                due_perd : recordDate,
+                due_perd: recordDate,
                 tradechannel: TradeChannel
             }
         })
-            if (result.length > 0) {
-                let customerId = result[0].id
-                let record =  customerId 
-                return record
-            } else {
-               return null
-           }
+        if (result.length > 0) {
+            let customerId = result[0].id
+            let record = customerId
+            return record
+        } else {
+            return null
+        }
     }
 
     async readAnomalous(customerId, recordDate, TradeChannel) {

@@ -10,7 +10,9 @@ const VAULT_NAMESPACE = _hash(VAULT_FAMILY).substring(20, 26)
 
 const _genVaultAddress = (x) => VAULT_NAMESPACE + _hash(x)
 
-module.exports = { VAULT_FAMILY, 
-                   VERSION, 
-                   VAULT_NAMESPACE,
-                   _genVaultAddress };
+module.exports = {
+  VAULT_FAMILY,
+  VERSION,
+  VAULT_NAMESPACE,
+  _genVaultAddress
+};

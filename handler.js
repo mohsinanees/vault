@@ -7,15 +7,16 @@ const { InvalidTransaction } = require('sawtooth-sdk/processor/exceptions')
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 const VaultPayload = require('./payload')
 const SQL = require('./sql')
-let flogger = require('perfect-logger');
-flogger.setLogDirectory("/home/mohsin/logs");
+const flogger = require('perfect-logger');
+const { log_dir } = require("./config.js")
+flogger.setLogDirectory(log_dir);
 flogger.setLogFileName("vault_processor");
 
 flogger.initialize();
 const csvWriter = createCsvWriter({
   path: '/home/mohsin/Documents/CSV_files/Pre_Processed/AKC12.csv', append: true,
   header: ['CustID', 'CustName', 'recordDate', 'TradeChannel',
-  'Prev_TradeChannel', 'hash', 'Prev_StateHash', 'Anomalous_Status']
+    'Prev_TradeChannel', 'hash', 'Prev_StateHash', 'Anomalous_Status']
 });
 
 const { VAULT_FAMILY,
@@ -37,7 +38,7 @@ const _setEntry = (context, address, stateValue) => {
 const _applySet = (context, address, payload) => async (possibleAddressValues) => {
   let stateValueRep = possibleAddressValues[address]
   const sql = new SQL()
-  let message = {...payload}
+  let message = { ...payload }
   let stateValue;
 
   if (stateValueRep && stateValueRep.length > 0) {
@@ -46,50 +47,50 @@ const _applySet = (context, address, payload) => async (possibleAddressValues) =
     message['Prev_StateHash'] = stateValue.hash
 
     if (stateValue.hash != payload.hash) {
-      if(count == 0) {
-          message['Anomalous_Status'] = 'true'
-          logger(message, WARN)
-          await csvWriter.writeRecords([message])
-          // let TradeChannel = payload.TradeChannel
-          // if ( payload.TradeChannel == "N/A") {
-          //   TradeChannel = ''
-          // }
-          let result = await sql.readRecord( payload.CustID, payload.recordDate, payload.TradeChannel )
-          if(result) {
-            console.log("\n\nBlah = \n\n"+ result);
-            let status = await sql.insertAnomaly( result, payload.recordDate, payload.TradeChannel )
-            if (status) {
-              console.log("\n ===========Anomaly inserted in AKC=========== \n")
-            }
+      if (count == 0) {
+        message['Anomalous_Status'] = 'true'
+        logger(message, WARN)
+        await csvWriter.writeRecords([message])
+        // let TradeChannel = payload.TradeChannel
+        // if ( payload.TradeChannel == "N/A") {
+        //   TradeChannel = ''
+        // }
+        let result = await sql.readRecord(payload.CustID, payload.recordDate, payload.TradeChannel)
+        if (result) {
+          console.log("\n\nBlah = \n\n" + result);
+          let status = await sql.insertAnomaly(result, payload.recordDate, payload.TradeChannel)
+          if (status) {
+            console.log("\n ===========Anomaly inserted in AKC=========== \n")
           }
-          count++ 
-           
+        }
+        count++
+
       } else {
-          count = 0
+        count = 0
       }
     } else {
-        if(count == 0) {
-            message['Anomalous_Status'] = 'false'
-            logger(message, DEBUG)
-            await csvWriter.writeRecords([message])
-            count++ 
-        } else {
-            count = 0
-        }
-    }
-  } else {
-    if(count == 0) {
-        message['Prev_TradeChannel'] = 'null'
-        message['Prev_StateHash'] = 'null'
+      if (count == 0) {
         message['Anomalous_Status'] = 'false'
         logger(message, DEBUG)
         await csvWriter.writeRecords([message])
-        count++ 
-    } else {
+        count++
+      } else {
         count = 0
+      }
     }
- }
-  stateValue = {...payload}
+  } else {
+    if (count == 0) {
+      message['Prev_TradeChannel'] = 'null'
+      message['Prev_StateHash'] = 'null'
+      message['Anomalous_Status'] = 'false'
+      logger(message, DEBUG)
+      await csvWriter.writeRecords([message])
+      count++
+    } else {
+      count = 0
+    }
+  }
+  stateValue = { ...payload }
   return _setEntry(context, address, stateValue)
 }
 
@@ -122,7 +123,7 @@ class VaultHandler extends TransactionHandler {
     return actionPromise.then(addresses => {
       if (addresses.length === 0) {
         throw new InternalError('State Error!')
-      } 
+      }
     })
 
   }

@@ -4,7 +4,7 @@ const request = require('request')
 const cbor = require('cbor')
 const axios = require("axios");
 const cors = require("cors");
-const { _genVaultAddress } = require("./namespace");
+const { _genVaultAddress } = require("./namespace.js");
 
 const app = express();
 const PORT = 5000
@@ -13,7 +13,7 @@ app.use(cors());
 var prevAddress
 var OFFSET
 var offset = ''
-var end  = '4726d367f6e064a532d6baf2e180f51d251128639e447e5dd8c350f45ec1787f3e819493183b485fc2e202fb9f0f350e2eb9a98677bfffbb583086b9f601b7d0'
+var end = '27fd19863d1ea1f7a9cfcc3138c1956ef2a606cd195fd3b9d6708f2c015970a8490f0c0d0be02ea548c7d785b65f9d677ef99df1686090fc95c91e910a30ec0a'
 var hash = ''
 var customerHistory = []
 
@@ -45,7 +45,7 @@ app.get('/history/:id', async (req, res) => {
             if (offset == end) {
                 break
             }
-        } 
+        }
         customerHistory = customerHistory.filter(String)
         let hash
         if (customerHistory.length > 0) {
@@ -83,29 +83,29 @@ const getHistory = async (stateAddress) => {
             params: parameters
         }
     )
-        const transactions = response.data;
-        // console.log(transactions.data.length)
-        let payloadList = []
-        // let hash
+    const transactions = response.data;
+    // console.log(transactions.data.length)
+    let payloadList = []
+    // let hash
 
-        transactions.data.filter(value => {
-            if (value.header.inputs.includes(stateAddress)) {
-                // console.log(value.header_signature)
-                payloadList.push(value.payload)
-            }
-        })
+    transactions.data.filter(value => {
+        if (value.header.inputs.includes(stateAddress)) {
+            // console.log(value.header_signature)
+            payloadList.push(value.payload)
+        }
+    })
 
-        // payloadList = payloadList.slice(offset, offset + 10)
-        payloadList.forEach(element => {
+    // payloadList = payloadList.slice(offset, offset + 10)
+    payloadList.forEach(element => {
 
-            let data = Buffer.from(element, 'base64')
-            data = cbor.decode(data)
-            // console.log("\nhash:")
-            // console.log(data.hash + "\n")
-            customerHistory.push(data)
-        })
-        // console.log(res)
-        offset = transactions.data[transactions.data.length - 1].header_signature
-        // console.log(offset)
-        // return res
+        let data = Buffer.from(element, 'base64')
+        data = cbor.decode(data)
+        // console.log("\nhash:")
+        // console.log(data.hash + "\n")
+        customerHistory.push(data)
+    })
+    // console.log(res)
+    offset = transactions.data[transactions.data.length - 1].header_signature
+    // console.log(offset)
+    // return res
 };
