@@ -1,17 +1,15 @@
+const fs = require('fs')
 const express = require('express')
-const loadRecords = require('./client')
-
+const loadRecords = require("./client.js")
 const app = express()
-const port = 3000
+const port = 5522
+var data;
 
-app.get('/loadrecords/', (req, res) => {
 
-    //res.send('Processing...')
+app.get('/blockchain', function (req, res) {
+    res.send('Blockchain loader Started')
     loadRecords()
-   
 })
 
 
-
-
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(port, () => console.log(`Blockchain loader listening on port ${port}!`))
