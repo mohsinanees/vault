@@ -1,14 +1,19 @@
 const SQL = require('./sql')
 const USER = require("os").userInfo().username
 const fs = require('fs')
-const privateKeyHex = fs.readFileSync(`/home/${USER}/.sawtooth/keys/${USER}.priv`, 'utf8')
-const VaultClient = require("./VaultClient.js")
+const privateKeyHex = fs.readFileSync(`/home/mohsin/.sawtooth/keys/mohsin.priv`, 'utf8')
+const VaultClient = require("./VaultClient")
+const csv = require('csv-parser')
 const logger = require('perfect-logger');
-const { log_dir } = require("./config.js")
+const { Log_Dir } = require("./config")
 
-logger.setLogDirectory(log_dir);
+logger.setLogDirectory(Log_Dir);
 logger.setLogFileName("client");
-logger.initialize()
+logger.initialize();
+
+var UFrecords = [];
+var ParsedRecords = [];
+var Frecords = [];
 
 const sql = new SQL()
 const client = new VaultClient(privateKeyHex)
@@ -21,47 +26,71 @@ const client = new VaultClient(privateKeyHex)
 //   recordDate: "2019-10-01"
 // }
 
-async function execute(limit, offset) {
-  let records = await sql.readRecords(limit, offset)
+async function execute(limit, offset) 
+{ 
+ // const records = Frecords.slice(offset, offset + 25)
+    let records = await sql.readRecords(limit, offset)
+  // let frecords = []
+  // await records.forEach(element => {
+  // frecords.push(JSON.stringify(element))
+  // }) 	
   const transactions = await client.CreateTransactions(records, sql)
   const batch = await client.CreateBatch(transactions)
   await client.SubmitBatch(batch)
 }
 
-var delay
+///home/mohsin/Documents/CSV_files/Pre_Processed/PreProcessed.csv
+
+// async function main() {
+//   fs.createReadStream('/home/ibneali/Desktop/FullDataBlockchain-11Jan/CompleteData.csv')
+//     .pipe(csv())
+//     .on('data', (data) => UFrecords.push(data))
+//     .on('end', async () => {
+//       // console.log(results.slice(0, 10))
+//       console.log(UFrecords.length)
+//       UFrecords.forEach(element => {
+//         let obj = {'CUST_ID': element.CUST_ID,
+//                    'CustomerName': element.CustomerName,
+//                    'TradeChannel': element.TradeChannel,
+//                    'DUE_PERD': element.DUE_PERD}
+//         ParsedRecords.push(JSON.stringify(obj))
+//       })
+//       Frecords = [...new Set(ParsedRecords)]
+//       console.log(Frecords.length)
+//       await loadRecords()
+//     })
+
+// }
+
+var delay  
 
 async function loadRecords() {
   // console.log("LoadFunction")
   console.log()
-  var recordSize = await sql.readCount()
+  var recordSize = await sql.readCount();
+  //console.log(recordSize);
+  //await sql.readRecords(0, 0).length;
+
   console.log(recordSize);
-  var offset = Number(fs.readFileSync('./temp.txt'));
-  console.log(offset.toString());
-  console.log("Program Ended" + offset);
-  for (var i = 0, limit = 25; offset < recordSize; offset = offset + limit) {
-    console.log("inloop")
-    if (recordSize - offset < limit) {
-      if (recordSize % limit != 0) {
-        limit = recordSize - offset
+
+  for (var i =  0, limit = 25; i < recordSize; i = i + limit) {
+    if(recordSize - i < limit) {
+      if(recordSize % limit != 0) {
+        limit = recordSize - i
       }
     }
-    if (i != 0 && i % 2500 == 0) {
+    if( i != 0 && i % 2500 == 0 ) {
       //7000
       delay = 7000
     } else {
-      //2000
+     //2000
       delay = 2000
     }
     await sleep(delay)
-    await execute(limit, offset)
-    console.log("\n" + offset + "\n")
-    logger.info(offset.toString())
+    await execute(limit, i)
+    console.log("\n" + i + "\n")
+    logger.info(i.toString())
   }
-  fs.writeFile("./temp.txt", recordSize, (err) => {
-    if (err) console.log(err);
-    console.log("Successfully Written to File.");
-  });
-
 }
 
 function sleep(ms) {
@@ -72,6 +101,5 @@ function sleep(ms) {
 
 //loadRecords()
 //main()
-
 
 module.exports = loadRecords

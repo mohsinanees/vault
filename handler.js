@@ -8,8 +8,7 @@ const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 const VaultPayload = require('./payload')
 const SQL = require('./sql')
 let flogger = require('perfect-logger');
-const { log_dir } = require("./config.js")
-flogger.setLogDirectory(log_dir);
+flogger.setLogDirectory("/home/mohsin/logs");
 flogger.setLogFileName("vault_processor");
 
 flogger.initialize();
