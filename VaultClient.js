@@ -8,9 +8,9 @@ const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 const { Secp256k1PrivateKey } = require('sawtooth-sdk/signing/secp256k1')
 //const VaultPayload = require('./payload')
 const { VAULT_FAMILY, VERSION, _genVaultAddress } = require('./namespace');
-const { BATCH_URL, Log_Dir } = require("./config")
+const { BATCH_URL, log_dir } = require("./config")
 
-logger.setLogDirectory(Log_Dir);
+logger.setLogDirectory(log_dir);
 logger.setLogFileName("client");
 logger.initialize();
 const csvWriter = createCsvWriter({
